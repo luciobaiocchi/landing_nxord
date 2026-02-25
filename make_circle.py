@@ -16,6 +16,6 @@ def make_circle(image_path, output_path):
     print(f"Saved circular image to {output_path}")
 
 if __name__ == "__main__":
-    input_path = "public/logo.png"
+    input_path = "public/logo-circle.png"
     output_path = "public/logo-circle.png"
     make_circle(input_path, output_path)

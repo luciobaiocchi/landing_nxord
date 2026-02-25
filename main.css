@@ -1,0 +1,176 @@
+/* ==========================================================================
+   Tema NxOrd - B2B SaaS Landing Page
+   Concept: Affidabilità, Serenità, Automazione
+   ========================================================================== */
+
+/* --- VARIABILI GLOBALI (Modifica queste per cambiare tutto il tema) --- */
+:root {
+  /* Palette Colori Brand */
+  --color-primary: #1A2238;        /* Blu Indaco scuro - Istituzionale e solido */
+  --color-primary-light: #2C3E50;  /* Blu lavagna - Per testi secondari */
+  --color-accent: #0ea5e9;         /* Celeste chiaro - Azione, fluidità e tecnologia */
+  --color-accent-hover: #0284c7;   /* Celeste scuro - Per effetti hover sui bottoni */
+  
+  /* Sfondi e Superfici */
+  --bg-main: #ffffff;              /* Bianco puro per massima leggibilità */
+  --bg-secondary: #f8f9fa;         /* Grigio chiarissimo per differenziare le sezioni */
+  --bg-card: #ffffff;
+  
+  /* Colori Testo */
+  --text-heading: #0f172a;         /* Quasi nero/blu per i Titoli (H1, H2, H3) */
+  --text-body: #475569;            /* Grigio ardesia per i paragrafi (non stanca la vista) */
+  --text-muted: #94a3b8;           /* Grigio chiaro per testi minori o note */
+  
+  /* Struttura e Spaziature */
+  --container-width: 1200px;
+  --radius-sm: 6px;
+  --radius-md: 10px;               /* Angoli morbidi per rassicurare */
+  --radius-lg: 16px;
+  
+  /* Ombre (Leggere e pulite, niente effetti pesanti) */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.025);
+  
+  /* Tipografia */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* --- RESET BASE --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-body);
+  background-color: var(--bg-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- TIPOGRAFIA --- */
+h1, h2, h3, h4 {
+  color: var(--text-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em; /* Stringe leggermente i titoli per un look più moderno */
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); } /* Ridimensionamento fluido */
+h2 { font-size: clamp(2rem, 4vw, 2.5rem); }
+p { margin-bottom: 1.5rem; font-size: 1.125rem; }
+
+/* --- STRUTTURA DI LAYOUT --- */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 80px 0; /* Ampio respiro tra le sezioni */
+}
+
+.bg-light {
+  background-color: var(--bg-secondary);
+}
+
+/* --- COMPONENTI: BOTTONI --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px); /* Leggero sollevamento interattivo */
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-secondary);
+}
+
+/* --- COMPONENTI: CARDS (Per features o passaggi) --- */
+.card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #e2e8f0;
+  transition: box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg); /* Si illumina dolcemente al passaggio del mouse */
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  background-color: var(--bg-secondary);
+  color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  padding: 120px 0 80px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-main) 100%);
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 32px;
+  color: var(--text-body);
+  font-size: 1.25rem;
+}
+
+/* --- GRIGLIA PER LE FEATURES (Come funziona) --- */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+/* --- UTILITIES PER L'AFFIDABILITÀ --- */
+/* Un piccolo accento visivo sopra le sezioni chiave (richiama il logo) */
+.border-top-gradient {
+  border-top: 4px solid;
+  border-image-source: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border-image-slice: 1;
+}

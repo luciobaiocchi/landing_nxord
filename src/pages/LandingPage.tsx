@@ -1,29 +1,13 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 import LandingNavbar from '../components/landing/LandingNavbar';
 import HeroSection from '../components/landing/HeroSection';
 import FeaturesSection from '../components/landing/FeaturesSection';
 import AboutSection from '../components/landing/AboutSection';
 import ContactSection from '../components/landing/ContactSection';
 import Footer from '../components/landing/Footer';
-import DynamicBackground from '../components/landing/DynamicBackground';
-import '../styles/landing.css';
+import '../index.css';
 
 const LandingPage: React.FC = () => {
-  useLayoutEffect(() => {
-    // 1. Force Dark Mode for Landing Page
-    document.body.classList.add('dark-mode');
-    document.documentElement.setAttribute('data-theme', 'dark');
-
-    return () => {
-      // 2. Restore User Preference on Unmount
-      const storedTheme = localStorage.getItem('theme');
-      if (storedTheme === 'light') {
-        document.body.classList.remove('dark-mode');
-        document.documentElement.setAttribute('data-theme', 'light');
-      }
-    };
-  }, []);
-
   useEffect(() => {
     // Scroll Reveal Observer
     const observer = new IntersectionObserver((entries) => {
@@ -45,8 +29,7 @@ const LandingPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="landing-page">
-      <DynamicBackground />
+    <div className="landing-page bg-main text-body">
       <LandingNavbar />
       <HeroSection />
       <FeaturesSection />

@@ -1,37 +1,88 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import '../../styles/landing.css';
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="position-relative d-flex flex-column align-items-center pt-5 overflow-hidden" style={{ minHeight: '100vh' }}>
-      {/* Background Elements */}
-      <div className="position-absolute top-0 start-0 w-100 h-100 overflow-hidden" style={{ zIndex: -1 }}>
-        <div className="position-absolute top-0 start-50 translate-middle rounded-circle animate-float" 
-             style={{ width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(0,200,83,0.08) 0%, rgba(255,255,255,0) 70%)', filter: 'blur(60px)' }}></div>
-        <div className="position-absolute bottom-0 end-0 rounded-circle animate-float delay-500" 
-             style={{ width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(0,145,234,0.08) 0%, rgba(255,255,255,0) 70%)', filter: 'blur(60px)' }}></div>
-      </div>
+    <section className="bg-tech-dots position-relative overflow-hidden" style={{ padding: '80px 0 72px' }}>
+      <div className="container">
+        <div className="hero-grid">
 
-      <Container className="pt-5 mt-5">
-        <Row className="justify-content-center text-center">
-          <Col lg={10} className="position-relative z-1">
-            <h1 className="display-huge fw-bold mb-4 animate-fade-in text-light" style={{ marginTop: '3rem' }}>
-              Il Futuro della <br />
-              <span className="text-gradient-green">Gestione Ordini</span>
+          {/* === COLONNA SINISTRA: Testo === */}
+          <div style={{ textAlign: 'left', borderLeft: '4px solid var(--color-accent)', paddingLeft: '24px' }}>
+
+            {/* Headline */}
+            <h1 className="mb-3" style={{ fontWeight: 800 }}>
+              Da un'email confusa a un ordine pronto in{' '}
+              <span style={{ color: 'var(--color-accent)' }}>pochi secondi</span>
             </h1>
-            <p className="lead text-white-50 mb-5 mx-auto animate-fade-in delay-100" style={{ maxWidth: '700px' }}>
-              NextOrder automatizza il tuo flusso di lavoro con l'Intelligenza Artificiale. 
-              Dimentica l'inserimento manuale, concentrati sulla crescita.
+
+            {/* Paragrafo */}
+            <p style={{ color: 'var(--text-muted)', maxWidth: '480px', fontSize: '1.0625rem', lineHeight: 1.6 }}>
+              NxOrd legge le email dei tuoi clienti Ho.Re.Ca., estrae codici prodotto e quantità, e genera ordini pronti per il tuo gestionale. Zero data entry, zero errori.
             </p>
-            <div className="d-flex justify-content-center gap-3 mb-5 animate-fade-in delay-200">
-              <a href="#contact" className="btn btn-primary-glow btn-lg">
-                Richiedi Accesso Anticipato
-              </a>
+
+            {/* CTA */}
+            <a href="#contact" className="btn-primary-action">
+              Richiedi accesso Early Access
+            </a>
+          </div>
+
+          {/* === COLONNA DESTRA: UI Mockup === */}
+          <div className="ui-mockup">
+            {/* Finta barra titolo finestra */}
+            <div className="ui-mockup-header">
+              <div className="ui-mockup-dot" style={{ backgroundColor: '#ef4444' }} />
+              <div className="ui-mockup-dot" style={{ backgroundColor: '#f59e0b' }} />
+              <div className="ui-mockup-dot" style={{ backgroundColor: '#22c55e' }} />
+              <span style={{ marginLeft: 'auto', fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: 'var(--font-heading)', fontWeight: 600 }}>NxOrd Dashboard</span>
             </div>
-          </Col>
-        </Row>
-      </Container>
+
+            {/* Blocco Email in entrata */}
+            <div className="ui-mockup-label">📩 Email ricevuta</div>
+            <div className="ui-mockup-row" style={{ display: 'block', fontFamily: 'monospace', fontSize: '0.75rem', lineHeight: 1.7, color: 'var(--text-body)' }}>
+              <div style={{ color: 'var(--text-muted)', marginBottom: '4px' }}>Da: ordini@ristorantedamarco.it</div>
+              <div style={{ borderTop: '1px solid var(--border-light)', paddingTop: '6px' }}>
+                Buongiorno, vi invio l'ordine per domani:<br />
+                - 3 casse Acqua Panna 1L<br />
+                - 2 cartoni Coca Cola 33cl<br />
+                - Mezzo bancale becks 33<br />
+                Grazie, Marco
+              </div>
+            </div>
+
+            {/* Freccia */}
+            <div className="ui-mockup-arrow">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 5v14M19 12l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Blocco Tabella Ordine */}
+            <div className="ui-mockup-label">✅ Ordine strutturato</div>
+            {/* Header riga */}
+            <div className="ui-mockup-row" style={{ fontSize: '0.6875rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase' as const, letterSpacing: '0.05em', background: 'transparent', border: 'none', padding: '4px 12px', marginBottom: '4px' }}>
+              <span style={{ flex: '1' }}>Codice</span>
+              <span style={{ flex: '2' }}>Prodotto</span>
+              <span style={{ flex: '0.5', textAlign: 'right' }}>Qtà</span>
+            </div>
+            <div className="ui-mockup-row" style={{ fontSize: '0.8125rem' }}>
+              <span style={{ flex: '1', color: 'var(--color-accent)', fontWeight: 600, fontFamily: 'monospace' }}>AP-1L</span>
+              <span style={{ flex: '2', color: 'var(--color-heading)' }}>Acqua Panna 1L</span>
+              <span style={{ flex: '0.5', textAlign: 'right', fontWeight: 700 }}>3</span>
+            </div>
+            <div className="ui-mockup-row" style={{ fontSize: '0.8125rem' }}>
+              <span style={{ flex: '1', color: 'var(--color-accent)', fontWeight: 600, fontFamily: 'monospace' }}>CC-33</span>
+              <span style={{ flex: '2', color: 'var(--color-heading)' }}>Coca Cola 33cl</span>
+              <span style={{ flex: '0.5', textAlign: 'right', fontWeight: 700 }}>2</span>
+            </div>
+            <div className="ui-mockup-row" style={{ fontSize: '0.8125rem' }}>
+              <span style={{ flex: '1', color: 'var(--color-accent)', fontWeight: 600, fontFamily: 'monospace' }}>BK-04</span>
+              <span style={{ flex: '2', color: 'var(--color-heading)' }}>Becks 33clx24</span>
+              <span style={{ flex: '0.5', textAlign: 'right', fontWeight: 700 }}>63</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </section>
   );
 };
