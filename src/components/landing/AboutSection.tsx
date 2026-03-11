@@ -6,29 +6,29 @@ const AboutSection: React.FC = () => {
   const team = [
     {
       name: 'Leonardo Passafiume',
-      role: 'CEO & Co-Founder',
+      role: 'Co-Founder',
       area: 'Strategia e Sviluppo B2B',
       initials: 'LP',
       linkedin: 'https://www.linkedin.com/in/leonardo-passafiume-9a3aa9307/'
     },
     {
       name: 'Lucio Baiocchi',
-      role: 'COO & Co-Founder',
+      role: 'Co-Founder',
       area: 'Automazione e Processi',
       initials: 'LB',
       linkedin: 'https://www.linkedin.com/in/lucio-baiocchi-39b420243/'
     },
     {
       name: 'Maurizio Lanzoni Raiteri',
-      role: 'CTO & Co-Founder',
+      role: 'Co-Founder',
       area: 'Machine Learning & Data Science',
       initials: 'ML',
       linkedin: 'https://www.linkedin.com/in/maurizio-l-041b9929b/'
     },
     {
       name: 'Thomas Kelly',
-      role: 'Head of Growth',
-      area: 'Partnerships',
+      role: 'Co-Founder',
+      area: 'Partnership e Responsabile Vendite',
       initials: 'TK',
       linkedin: 'https://www.linkedin.com/in/thomas-kelly-687b55251/'
     }

@@ -17,12 +17,14 @@ const HeroSection: React.FC = () => {
 
             {/* Paragrafo */}
             <p style={{ color: 'var(--text-muted)', maxWidth: '480px', fontSize: '1.0625rem', lineHeight: 1.6 }}>
-              NxOrd legge le email dei tuoi clienti Ho.Re.Ca., estrae codici prodotto e quantità, e genera ordini pronti per il tuo gestionale. Zero data entry, zero errori.
-            </p>
+Da email, WhatsApp, PDF o note vocali: NxOrd elabora ordini in qualsiasi formato. 
+              Estrae in automatico codici prodotto e quantità, generando un flusso dati strutturato e pronto per il tuo gestionale. 
+              Zero data entry, zero errori.            
+              </p>
 
             {/* CTA */}
             <a href="#contact" className="btn-primary-action">
-              Richiedi accesso Early Access
+              Richiedi accesso
             </a>
           </div>
 
