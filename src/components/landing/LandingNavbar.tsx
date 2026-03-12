@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Navbar, Nav, Offcanvas } from 'react-bootstrap';
+import { analytics } from '../../utils/analytics';
 
 const LandingNavbar: React.FC = () => {
   const [show, setShow] = React.useState(false);
@@ -20,6 +21,10 @@ const LandingNavbar: React.FC = () => {
 
   const handleLoginClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
+
+    // Evento GA4
+    analytics.trackLoginClick();
+
     const APP_URL = "https://app.nxord.com/login";
     const TEST_IMG = "https://app.nxord.com/static/logo.png";
 

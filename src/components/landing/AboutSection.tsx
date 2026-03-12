@@ -1,5 +1,6 @@
 import React from 'react';
 import { BsLinkedin } from 'react-icons/bs';
+import { analytics } from '../../utils/analytics';
 
 const AboutSection: React.FC = () => {
 
@@ -66,7 +67,7 @@ const AboutSection: React.FC = () => {
               <h4 className="mb-1">{member.name}</h4>
               <p className="small mb-1" style={{ color: 'var(--color-accent)', fontWeight: 600 }}>{member.role}</p>
               <p className="small mb-3" style={{ color: 'var(--text-muted)' }}>{member.area}</p>
-              <a href={member.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-heading)' }}>
+              <a href={member.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-heading)' }} onClick={() => analytics.trackSocialClick(member.name)}>
                 <BsLinkedin size={20} />
               </a>
             </div>

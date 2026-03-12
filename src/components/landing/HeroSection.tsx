@@ -1,4 +1,5 @@
 import React from 'react';
+import { analytics } from '../../utils/analytics';
 
 const HeroSection: React.FC = () => {
   return (
@@ -23,7 +24,7 @@ Da email, WhatsApp, PDF o note vocali: NxOrd elabora ordini in qualsiasi formato
               </p>
 
             {/* CTA */}
-            <a href="#contact" className="btn-primary-action">
+            <a href="#contact" className="btn-primary-action" onClick={() => analytics.trackHeroCTA()}>
               Richiedi accesso
             </a>
           </div>
