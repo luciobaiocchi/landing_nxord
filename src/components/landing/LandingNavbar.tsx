@@ -61,7 +61,7 @@ const LandingNavbar: React.FC = () => {
       }}
     >
       <Container>
-        <Navbar.Brand href="#" className="d-flex align-items-center m-0" style={{ gap: '10px' }}>
+        <Navbar.Brand href="/" className="d-flex align-items-center m-0" style={{ gap: '10px' }}>
           <img
             src="/logo-circle.png"
             alt="NxOrd Logo"
