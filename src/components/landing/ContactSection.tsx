@@ -14,7 +14,7 @@ const ContactSection: React.FC = () => {
             di integrazione e supporto.
           </p>
           <div className="mt-5">
-            <a href="mailto:info@nxord.com" className="btn-primary-action mb-4">
+            <a href="mailto:luciobaiocchi1@gmail.com" className="btn-primary-action mb-4">
               Contattaci per una Demo
             </a>
             
