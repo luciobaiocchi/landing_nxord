@@ -29,7 +29,7 @@ const PrivacyPolicyPage: React.FC = () => {
                 <p>
                   <strong>NextOrder</strong><br />
                   Sede legale: Milano, Italia<br />
-                  Email di contatto: <a href="mailto:info@nxord.com" style={{ color: 'var(--color-heading)', fontWeight: 500 }}>info@nxord.com</a>
+                  Email di contatto: <a href="mailto:luciobaiocchi1@gmail.com" style={{ color: 'var(--color-heading)', fontWeight: 500 }}>luciobaiocchi1@gmail.com</a>
                 </p>
               </section>
 
