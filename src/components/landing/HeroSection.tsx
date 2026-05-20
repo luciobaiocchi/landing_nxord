@@ -1,90 +1,166 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useLang } from '../../context/LanguageContext';
+import { t } from '../../translations';
 import { analytics } from '../../utils/analytics';
 
 const HeroSection: React.FC = () => {
+  const { lang } = useLang();
+  const tr = t[lang].hero;
+
   return (
-    <section className="bg-tech-dots position-relative overflow-hidden" style={{ padding: '80px 0 72px' }}>
-      <div className="container">
-        <div className="hero-grid">
+    <section id="hero" style={{
+      padding: '96px 0 80px',
+      backgroundColor: 'var(--bg-white)',
+      borderBottom: '1px solid var(--border-light)'
+    }}>
+      <div className="container text-center">
 
-          {/* === COLONNA SINISTRA: Testo === */}
-          <div style={{ textAlign: 'left', borderLeft: '4px solid var(--color-accent)', paddingLeft: '24px' }}>
+        <p className="reveal active" style={{
+          fontFamily: 'var(--font-heading)',
+          fontWeight: 700,
+          fontSize: '0.8125rem',
+          color: 'var(--color-accent)',
+          textTransform: 'uppercase',
+          letterSpacing: '0.1em',
+          marginBottom: '20px'
+        }}>
+          {tr.label}
+        </p>
 
-            {/* Headline */}
-            <h1 className="mb-3" style={{ fontWeight: 800 }}>
-              Da un'email confusa a un ordine pronto in{' '}
-              <span style={{ color: 'var(--color-accent)' }}>pochi secondi</span>
-            </h1>
+        <h1 className="reveal active mx-auto" style={{
+          maxWidth: '860px',
+          fontSize: 'clamp(2.5rem, 5.5vw, 4rem)',
+          fontWeight: 800,
+          color: 'var(--color-heading)',
+          lineHeight: 1.15,
+          letterSpacing: '-0.03em',
+          marginBottom: '24px'
+        }}>
+          {tr.title}
+        </h1>
 
-            {/* Paragrafo */}
-            <p style={{ color: 'var(--text-muted)', maxWidth: '480px', fontSize: '1.0625rem', lineHeight: 1.6 }}>
-Da email, WhatsApp, PDF o note vocali: NxOrd elabora ordini in qualsiasi formato. 
-              Estrae in automatico codici prodotto e quantità, generando un flusso dati strutturato e pronto per il tuo gestionale. 
-              Zero data entry, zero errori.            
-              </p>
+        <p className="reveal active mx-auto" style={{
+          maxWidth: '680px',
+          color: 'var(--text-muted)',
+          fontSize: '1.1875rem',
+          lineHeight: 1.65,
+          marginBottom: '40px'
+        }}>
+          {tr.subtitle}
+        </p>
 
-            {/* CTA */}
-            <a href="#contact" className="btn-primary-action" onClick={() => analytics.trackHeroCTA()}>
-              Richiedi accesso
-            </a>
+        <div className="reveal active d-flex flex-wrap justify-content-center gap-3 mb-5">
+          <a
+            href="#contact"
+            onClick={(e) => { e.preventDefault(); analytics.trackHeroCTA('Primary Demo'); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}
+            className="btn-primary-action"
+            style={{ padding: '14px 32px', fontSize: '1rem' }}
+          >
+            {tr.ctaPrimary}
+          </a>
+          <a
+            href="#use-cases"
+            onClick={(e) => { e.preventDefault(); analytics.trackHeroCTA('Secondary Use Cases'); document.getElementById('use-cases')?.scrollIntoView({ behavior: 'smooth' }); }}
+            className="btn-ghost-primary"
+            style={{ padding: '14px 32px', fontSize: '1rem' }}
+          >
+            {tr.ctaSecondary}
+          </a>
+        </div>
+
+        {/* Product module cards */}
+        <div id="use-cases" className="reveal active row g-4 mt-2">
+
+          <div className="col-12 col-md-6">
+            <div style={{
+              backgroundColor: 'var(--bg-main)',
+              border: '1px solid var(--border-color)',
+              borderRadius: '14px',
+              padding: '36px 32px',
+              textAlign: 'left',
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '16px',
+              transition: 'box-shadow 0.2s ease, transform 0.2s ease'
+            }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'var(--shadow-md)'; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-2px)'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'none'; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; }}
+            >
+              <div style={{
+                width: '40px', height: '40px',
+                backgroundColor: 'rgba(99,102,241,0.1)',
+                borderRadius: '8px',
+                display: 'flex', alignItems: 'center', justifyContent: 'center'
+              }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 style={{ fontSize: '1.1875rem', fontWeight: 800, color: 'var(--color-heading)', marginBottom: '10px', letterSpacing: '-0.02em' }}>
+                  {tr.module1Title}
+                </h3>
+                <p style={{ fontSize: '0.9375rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0 }}>
+                  {tr.module1Desc}
+                </p>
+              </div>
+              <Link
+                to="/casi-duso/gestione-ordini"
+                style={{ color: 'var(--color-accent)', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', marginTop: 'auto', fontFamily: 'var(--font-heading)' }}
+              >
+                {tr.module1Cta}
+              </Link>
+            </div>
           </div>
 
-          {/* === COLONNA DESTRA: UI Mockup === */}
-          <div className="ui-mockup">
-            {/* Finta barra titolo finestra */}
-            <div className="ui-mockup-header">
-              <div className="ui-mockup-dot" style={{ backgroundColor: '#ef4444' }} />
-              <div className="ui-mockup-dot" style={{ backgroundColor: '#f59e0b' }} />
-              <div className="ui-mockup-dot" style={{ backgroundColor: '#22c55e' }} />
-              <span style={{ marginLeft: 'auto', fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: 'var(--font-heading)', fontWeight: 600 }}>NxOrd Dashboard</span>
-            </div>
-
-            {/* Blocco Email in entrata */}
-            <div className="ui-mockup-label">📩 Email ricevuta</div>
-            <div className="ui-mockup-row" style={{ display: 'block', fontFamily: 'monospace', fontSize: '0.75rem', lineHeight: 1.7, color: 'var(--text-body)' }}>
-              <div style={{ color: 'var(--text-muted)', marginBottom: '4px' }}>Da: ordini@ristorantedamarco.it</div>
-              <div style={{ borderTop: '1px solid var(--border-light)', paddingTop: '6px' }}>
-                Buongiorno, vi invio l'ordine per domani:<br />
-                - 3 casse Acqua Panna 1L<br />
-                - 2 cartoni Coca Cola 33cl<br />
-                - Mezzo bancale becks 33<br />
-                Grazie, Marco
+          <div className="col-12 col-md-6">
+            <div style={{
+              backgroundColor: 'var(--color-heading)',
+              border: '1px solid var(--color-heading)',
+              borderRadius: '14px',
+              padding: '36px 32px',
+              textAlign: 'left',
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '16px',
+              transition: 'box-shadow 0.2s ease, transform 0.2s ease'
+            }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'var(--shadow-lg)'; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-2px)'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'none'; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; }}
+            >
+              <div style={{
+                width: '40px', height: '40px',
+                backgroundColor: 'rgba(255,255,255,0.12)',
+                borderRadius: '8px',
+                display: 'flex', alignItems: 'center', justifyContent: 'center'
+              }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                  <polyline points="16 7 22 7 22 13" />
+                </svg>
               </div>
-            </div>
-
-            {/* Freccia */}
-            <div className="ui-mockup-arrow">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 5v14M19 12l-7 7-7-7" />
-              </svg>
-            </div>
-
-            {/* Blocco Tabella Ordine */}
-            <div className="ui-mockup-label">✅ Ordine strutturato</div>
-            {/* Header riga */}
-            <div className="ui-mockup-row" style={{ fontSize: '0.6875rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase' as const, letterSpacing: '0.05em', background: 'transparent', border: 'none', padding: '4px 12px', marginBottom: '4px' }}>
-              <span style={{ flex: '1' }}>Codice</span>
-              <span style={{ flex: '2' }}>Prodotto</span>
-              <span style={{ flex: '0.5', textAlign: 'right' }}>Qtà</span>
-            </div>
-            <div className="ui-mockup-row" style={{ fontSize: '0.8125rem' }}>
-              <span style={{ flex: '1', color: 'var(--color-accent)', fontWeight: 600, fontFamily: 'monospace' }}>AP-1L</span>
-              <span style={{ flex: '2', color: 'var(--color-heading)' }}>Acqua Panna 1L</span>
-              <span style={{ flex: '0.5', textAlign: 'right', fontWeight: 700 }}>3</span>
-            </div>
-            <div className="ui-mockup-row" style={{ fontSize: '0.8125rem' }}>
-              <span style={{ flex: '1', color: 'var(--color-accent)', fontWeight: 600, fontFamily: 'monospace' }}>CC-33</span>
-              <span style={{ flex: '2', color: 'var(--color-heading)' }}>Coca Cola 33cl</span>
-              <span style={{ flex: '0.5', textAlign: 'right', fontWeight: 700 }}>2</span>
-            </div>
-            <div className="ui-mockup-row" style={{ fontSize: '0.8125rem' }}>
-              <span style={{ flex: '1', color: 'var(--color-accent)', fontWeight: 600, fontFamily: 'monospace' }}>BK-04</span>
-              <span style={{ flex: '2', color: 'var(--color-heading)' }}>Becks 33clx24</span>
-              <span style={{ flex: '0.5', textAlign: 'right', fontWeight: 700 }}>63</span>
+              <div>
+                <h3 style={{ fontSize: '1.1875rem', fontWeight: 800, color: '#ffffff', marginBottom: '10px', letterSpacing: '-0.02em' }}>
+                  {tr.module2Title}
+                </h3>
+                <p style={{ fontSize: '0.9375rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, margin: 0 }}>
+                  {tr.module2Desc}
+                </p>
+              </div>
+              <Link
+                to="/casi-duso/reparto-sales"
+                style={{ color: 'var(--color-accent)', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', marginTop: 'auto', fontFamily: 'var(--font-heading)' }}
+              >
+                {tr.module2Cta}
+              </Link>
             </div>
           </div>
 
         </div>
+
       </div>
     </section>
   );

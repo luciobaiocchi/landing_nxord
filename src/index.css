@@ -3,57 +3,48 @@
    Concept: Denso, Tecnico, Personalizzato, Tool per i dati
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Mono:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* Palette Colori Brand */
-  --color-heading: #0f172a;
-  /* slate-900 */
-  --color-brand: #1e3a8a;
-  /* blue-900 */
-  --color-accent: #0ea5e9;
-  /* sky-500 */
-  --color-accent-hover: #0369a1;
-  /* sky-700 */
+  /* Palette Colori Brand - Plato Style */
+  --color-heading: #0f172a; /* slate-900 */
+  --color-brand: #0f172a;   /* slate-900 */
+  --color-accent: #6366f1;  /* indigo-500 */
+  --color-accent-hover: #4f46e5; /* indigo-600 */
 
   /* Sfondi e Superfici */
-  --bg-main: #f1f5f9;
-  /* slate-100 — più caldo, meno bianco */
-  --bg-white: #f8fafc;
-  --bg-card: #f8fafc;
+  --bg-main: #f8fafc;       /* slate-50 */
+  --bg-white: #ffffff;
+  --bg-card: #ffffff;
 
   /* Colori Testo */
-  --text-body: #475569;
-  /* slate-600 */
-  --text-muted: #64748b;
-  /* slate-500 */
+  --text-body: #475569;     /* slate-600 */
+  --text-muted: #64748b;    /* slate-500 */
 
   /* Bordi */
-  --border-light: #f1f5f9;
-  /* slate-100 */
-  --border-color: #e2e8f0;
-  /* slate-200 */
-  --border-dark: #cbd5e1;
-  /* slate-300 */
+  --border-light: #f1f5f9;  /* slate-100 */
+  --border-color: #e2e8f0;  /* slate-200 */
+  --border-dark: #cbd5e1;   /* slate-300 */
 
-  /* Struttura */
-  --container-width: 1280px;
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  /* Struttura (Più geometrica e pulita come Plato) */
+  --container-width: 1200px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
   --radius-full: 9999px;
 
-  /* Ombre */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
+  /* Ombreggiature piatte e sobrie */
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
 
-  /* Tipografia */
-  --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
-  --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
+  /* Tipografia Figtree per Titoli & Montserrat per Testi */
+  --font-body: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Figtree', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Noto Sans Mono', monospace;
 }
 
 /* --- RESET --- */
@@ -142,10 +133,11 @@ section {
 
 .text-accent {
   color: var(--color-accent);
+  font-family: var(--font-mono) !important;
 }
 
 .bg-accent-subtle {
-  background-color: rgba(14, 165, 233, 0.06);
+  background-color: rgba(99, 102, 241, 0.06);
 }
 
 /* --- SFONDO TECNICO (Dot Pattern) --- */
@@ -180,57 +172,73 @@ section {
 /* --- COMPONENTI: BOTTONI --- */
 .btn-primary-action {
   font-family: var(--font-heading);
-  background-color: var(--color-accent);
+  background-color: var(--color-brand);
   color: #ffffff;
-  padding: 0.75rem 1.75rem;
-  font-size: 1rem;
-  font-weight: 600;
+  padding: 0.8rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 700;
   text-decoration: none;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   display: inline-block;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.15s ease-in-out;
   border: none;
-  box-shadow: var(--shadow-md);
+  box-shadow: none;
 }
 
 .btn-primary-action:hover {
-  background-color: var(--color-accent-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-xl);
+  background-color: #1e293b; /* slate-800 */
   color: #ffffff;
 }
 
 .btn-ghost-primary {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   background-color: transparent;
   color: var(--color-heading);
-  border: 1px solid var(--border-color);
-  padding: 0.5rem 1.25rem;
-  font-size: 0.875rem;
-  font-weight: 500;
+  border: 1.5px solid var(--color-heading);
+  padding: 0.8rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 700;
   text-decoration: none;
-  border-radius: var(--radius-full);
-  transition: all 0.2s ease-in-out;
+  border-radius: var(--radius-md);
+  transition: all 0.15s ease-in-out;
   display: inline-block;
 }
 
 .btn-ghost-primary:hover {
-  background-color: var(--bg-white);
-  border-color: var(--border-dark);
+  background-color: rgba(15, 23, 42, 0.04);
+  border-color: var(--color-heading);
   color: var(--color-heading);
 }
 
 /* --- NAV LINKS --- */
 .nav-link-custom {
   color: var(--text-body);
-  font-weight: 500;
-  font-size: 0.9375rem;
+  font-family: var(--font-mono) !important;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
 }
 
 .nav-link-custom:hover {
   color: var(--color-heading);
+}
+
+.nav-link-custom .dropdown-toggle {
+  font-family: var(--font-mono) !important;
+  font-weight: 700 !important;
+  font-size: 0.8125rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: var(--text-body) !important;
+  padding: 0 !important;
+}
+
+.nav-link-custom .dropdown-toggle:hover,
+.nav-link-custom.show .dropdown-toggle {
+  color: var(--color-heading) !important;
 }
 
 /* --- CARD --- */
@@ -346,4 +354,109 @@ section {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* --- ANIMAZIONE E STILI INTEGRATI --- */
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: var(--shadow-sm);
+  }
+  50% {
+    transform: scale(1.015);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+  }
+}
+
+.ui-mockup-badge {
+  animation: pulse-subtle 3s infinite ease-in-out;
+  transition: all 0.3s ease;
+}
+
+.ui-mockup-badge:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(99, 102, 241, 0.6) !important;
+}
+
+/* Transizioni addizionali per pulsanti tab */
+button {
+  font-family: inherit;
+}
+
+/* --- BENTO GRID SYSTEM --- */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.bento-col-8 {
+  grid-column: span 8;
+}
+
+.bento-col-4 {
+  grid-column: span 4;
+}
+
+.bento-col-12 {
+  grid-column: span 12;
+}
+
+@media (max-width: 991px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-col-8, .bento-col-4, .bento-col-12 {
+    grid-column: span 12 !important;
+  }
+}
+
+.bento-card {
+  background: var(--bg-white);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bento-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+/* Glassmorphism Panel styles */
+.glass-floating-panel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  border-radius: 18px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card:hover .glass-floating-panel {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+}
+
+.blur-bg-content {
+  filter: blur(6px);
+  opacity: 0.3;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.bento-card:hover .blur-bg-content {
+  filter: blur(3px);
+  opacity: 0.45;
 }
