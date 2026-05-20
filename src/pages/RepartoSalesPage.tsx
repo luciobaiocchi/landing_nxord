@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import LandingNavbar from '../components/landing/LandingNavbar';
 import ContactSection from '../components/landing/ContactSection';
 import Footer from '../components/landing/Footer';
+import SEO from '../components/SEO';
 import { useLang } from '../context/LanguageContext';
 import { t } from '../translations';
 
@@ -27,6 +28,14 @@ const RepartoSalesPage: React.FC = () => {
 
   return (
     <div className="landing-page bg-main text-body">
+      <SEO
+        title={lang === 'it' ? 'Reparto Sales potenziato dall\'AI per distributori Ho.Re.Ca.' : 'AI-powered Sales Department for Ho.Re.Ca. distributors'}
+        description={lang === 'it'
+          ? 'NxOrd monitora ogni cliente, anticipa il churn e suggerisce upselling in tempo reale. Dashboard KPI per agenti e direzione commerciale. Scopri come funziona.'
+          : 'NxOrd monitors every customer, predicts churn and suggests upselling in real time. KPI dashboard for agents and sales management. See how it works.'}
+        canonical="/casi-duso/reparto-sales"
+        lang={lang}
+      />
       <LandingNavbar />
 
       {/* Hero */}

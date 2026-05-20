@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import LandingNavbar from '../components/landing/LandingNavbar';
 import ContactSection from '../components/landing/ContactSection';
 import Footer from '../components/landing/Footer';
+import OrderFlowDiagram from '../components/landing/OrderFlowDiagram';
+import SEO from '../components/SEO';
 import { useLang } from '../context/LanguageContext';
 import { t } from '../translations';
 
@@ -27,6 +29,15 @@ const GestioneOrdiniPage: React.FC = () => {
 
   return (
     <div className="landing-page bg-main text-body">
+      <SEO
+        title={lang === 'it' ? 'Gestione Ordini automatizzata per distributori Ho.Re.Ca.' : 'Automated Order Management for Ho.Re.Ca. distributors'}
+        description={lang === 'it'
+          ? 'NxOrd automatizza la ricezione degli ordini da email, WhatsApp e PDF e li inserisce nel tuo ERP. Risparmia 5 ore a settimana per addetto. Scopri come funziona.'
+          : 'NxOrd automates order intake from email, WhatsApp and PDF and enters them into your ERP. Save 5 hours per employee per week. See how it works.'}
+        canonical="/casi-duso/gestione-ordini"
+        lang={lang}
+      />
+
       <LandingNavbar />
 
       {/* Hero */}
@@ -35,13 +46,9 @@ const GestioneOrdiniPage: React.FC = () => {
           <div className="row align-items-center g-5">
             <div className="col-12 col-lg-7 reveal active">
               <div style={{ display: 'flex', gap: '10px', marginBottom: '16px', alignItems: 'center' }}>
-                <Link to="/" style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', textDecoration: 'none', fontFamily: 'var(--font-heading)', fontWeight: 600 }}>
-                  Home
-                </Link>
+                <Link to="/" style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', textDecoration: 'none', fontFamily: 'var(--font-heading)', fontWeight: 600 }}>Home</Link>
                 <span style={{ color: 'var(--border-dark)', fontSize: '0.75rem' }}>›</span>
-                <span style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', fontFamily: 'var(--font-heading)', fontWeight: 600 }}>
-                  {tr.label}
-                </span>
+                <span style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', fontFamily: 'var(--font-heading)', fontWeight: 600 }}>{tr.label}</span>
               </div>
               <div style={{ display: 'inline-block', padding: '4px 12px', backgroundColor: 'rgba(14,165,233,0.08)', border: '1px solid rgba(14,165,233,0.2)', borderRadius: '100px', fontSize: '0.75rem', fontWeight: 700, color: 'var(--color-accent)', fontFamily: 'var(--font-heading)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '20px' }}>
                 {tr.badge}
@@ -61,7 +68,7 @@ const GestioneOrdiniPage: React.FC = () => {
             <div className="col-12 col-lg-5 reveal active">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {kpis.map((kpi, i) => (
-                  <div key={i} style={{ padding: '24px 28px', backgroundColor: i === 0 ? 'var(--color-heading)' : 'var(--bg-main)', border: '1px solid ' + (i === 0 ? 'var(--color-heading)' : 'var(--border-color)'), borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '20px' }}>
+                  <div key={i} style={{ padding: '24px 28px', backgroundColor: i === 0 ? 'var(--color-heading)' : 'var(--bg-white)', border: '1px solid ' + (i === 0 ? 'var(--color-heading)' : 'var(--border-color)'), borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '20px', boxShadow: 'var(--shadow-sm)' }}>
                     <div style={{ fontSize: '2rem', fontWeight: 800, color: i === 0 ? '#ffffff' : 'var(--color-heading)', fontFamily: 'var(--font-heading)', letterSpacing: '-0.04em', minWidth: '80px' }}>
                       {kpi.value}
                     </div>
@@ -76,7 +83,7 @@ const GestioneOrdiniPage: React.FC = () => {
         </div>
       </section>
 
-      {/* How it works */}
+      {/* Flow diagram – replaces the 4-step cards */}
       <section style={{ padding: '96px 0', backgroundColor: 'var(--bg-main)' }}>
         <div className="container">
           <div className="text-center mb-5 reveal active">
@@ -88,17 +95,22 @@ const GestioneOrdiniPage: React.FC = () => {
             </h2>
           </div>
 
-          <div className="row g-4">
+          <div className="reveal active" style={{ padding: '48px 32px', backgroundColor: 'var(--bg-white)', border: '1px solid var(--border-color)', borderRadius: '16px', boxShadow: 'var(--shadow-sm)' }}>
+            <OrderFlowDiagram />
+          </div>
+
+          {/* Brief step captions below the diagram */}
+          <div className="row g-3 mt-4">
             {tr.steps.map((step, i) => (
-              <div key={i} className="col-12 col-md-6 reveal active">
-                <div style={{ backgroundColor: 'var(--bg-white)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '36px', height: '100%', boxShadow: 'var(--shadow-sm)' }}>
-                  <div style={{ fontSize: '0.6875rem', fontWeight: 800, color: 'var(--color-accent)', fontFamily: 'var(--font-heading)', letterSpacing: '0.1em', marginBottom: '16px', textTransform: 'uppercase' }}>
-                    Passo {step.num}
+              <div key={i} className="col-12 col-sm-6 col-lg-3 reveal active">
+                <div style={{ padding: '20px', backgroundColor: 'var(--bg-white)', border: '1px solid var(--border-color)', borderRadius: '10px', height: '100%' }}>
+                  <div style={{ fontSize: '0.625rem', fontWeight: 800, color: 'var(--color-accent)', fontFamily: 'var(--font-heading)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '8px' }}>
+                    {step.num}
                   </div>
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--color-heading)', letterSpacing: '-0.02em', marginBottom: '12px' }}>
+                  <h4 style={{ fontSize: '0.9375rem', fontWeight: 700, color: 'var(--color-heading)', marginBottom: '6px', letterSpacing: '-0.01em' }}>
                     {step.title}
-                  </h3>
-                  <p style={{ fontSize: '0.9375rem', color: 'var(--text-body)', lineHeight: 1.65, margin: 0 }}>
+                  </h4>
+                  <p style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', lineHeight: 1.55, margin: 0 }}>
                     {step.desc}
                   </p>
                 </div>
@@ -114,7 +126,7 @@ const GestioneOrdiniPage: React.FC = () => {
           <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', marginBottom: '16px' }}>
             {tr.ctaTitle}
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.0625rem', marginBottom: '32px', maxWidth: '520px', margin: '0 auto 32px' }}>
+          <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.0625rem', maxWidth: '520px', margin: '0 auto 32px' }}>
             {tr.ctaSubtitle}
           </p>
           <a href="#contact" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ backgroundColor: 'var(--color-accent)', color: '#ffffff', padding: '14px 36px', borderRadius: '8px', fontWeight: 700, fontSize: '1rem', textDecoration: 'none', fontFamily: 'var(--font-heading)', display: 'inline-block' }}>

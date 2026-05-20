@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+  <url>
+    <loc>https://www.nxord.com/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.nxord.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nxord.com/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-05-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.nxord.com/casi-duso/gestione-ordini</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.nxord.com/casi-duso/gestione-ordini"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nxord.com/casi-duso/gestione-ordini"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.nxord.com/casi-duso/reparto-sales</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.nxord.com/casi-duso/reparto-sales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nxord.com/casi-duso/reparto-sales"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.nxord.com/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.nxord.com/cookie-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.nxord.com/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

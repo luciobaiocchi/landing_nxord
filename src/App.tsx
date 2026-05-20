@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from './context/LanguageContext';
 import LandingPage from './pages/LandingPage';
 import GestioneOrdiniPage from './pages/GestioneOrdiniPage';
@@ -13,6 +14,7 @@ import CookieBanner from './components/landing/CookieBanner';
 
 function App() {
   return (
+    <HelmetProvider>
     <LanguageProvider>
       <Router>
         <CookieBanner />
@@ -28,6 +30,7 @@ function App() {
         </Routes>
       </Router>
     </LanguageProvider>
+    </HelmetProvider>
   );
 }
 
