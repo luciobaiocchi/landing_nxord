@@ -9,8 +9,8 @@
   /* Palette Colori Brand - Plato Style */
   --color-heading: #0f172a; /* slate-900 */
   --color-brand: #0f172a;   /* slate-900 */
-  --color-accent: #0ea5e9;  /* sky-500 */
-  --color-accent-hover: #0284c7; /* sky-600 */
+  --color-accent: #6366f1;  /* indigo-500 */
+  --color-accent-hover: #4f46e5; /* indigo-600 */
 
   /* Sfondi e Superfici */
   --bg-main: #f8fafc;       /* slate-50 */
@@ -137,7 +137,7 @@ section {
 }
 
 .bg-accent-subtle {
-  background-color: rgba(14, 165, 233, 0.06);
+  background-color: rgba(99, 102, 241, 0.06);
 }
 
 /* --- SFONDO TECNICO (Dot Pattern) --- */
@@ -224,6 +224,21 @@ section {
 
 .nav-link-custom:hover {
   color: var(--color-heading);
+}
+
+.nav-link-custom .dropdown-toggle {
+  font-family: var(--font-mono) !important;
+  font-weight: 700 !important;
+  font-size: 0.8125rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: var(--text-body) !important;
+  padding: 0 !important;
+}
+
+.nav-link-custom .dropdown-toggle:hover,
+.nav-link-custom.show .dropdown-toggle {
+  color: var(--color-heading) !important;
 }
 
 /* --- CARD --- */
@@ -349,7 +364,7 @@ section {
   }
   50% {
     transform: scale(1.015);
-    box-shadow: 0 0 15px rgba(14, 165, 233, 0.2);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
   }
 }
 
@@ -361,7 +376,7 @@ section {
 .ui-mockup-badge:hover {
   transform: translateY(-2px) scale(1.02);
   box-shadow: var(--shadow-lg);
-  border-color: rgba(14, 165, 233, 0.6) !important;
+  border-color: rgba(99, 102, 241, 0.6) !important;
 }
 
 /* Transizioni addizionali per pulsanti tab */
@@ -415,7 +430,7 @@ button {
 .bento-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
-  border-color: rgba(14, 165, 233, 0.2);
+  border-color: rgba(99, 102, 241, 0.2);
 }
 
 /* Glassmorphism Panel styles */
@@ -440,14 +455,6 @@ button {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ── Navbar links truly centered on desktop ── */
-@media (min-width: 992px) {
-  .navbar-links-centered {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
 
 .bento-card:hover .blur-bg-content {
   filter: blur(3px);

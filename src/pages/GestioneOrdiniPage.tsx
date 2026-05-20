@@ -44,7 +44,7 @@ const GestioneOrdiniPage: React.FC = () => {
                 <span style={{ color: 'var(--border-dark)', fontSize: '0.75rem' }}>›</span>
                 <span style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', fontFamily: 'var(--font-heading)', fontWeight: 600 }}>{tr.label}</span>
               </div>
-              <div style={{ display: 'inline-block', padding: '4px 12px', backgroundColor: 'rgba(14,165,233,0.08)', border: '1px solid rgba(14,165,233,0.2)', borderRadius: '100px', fontSize: '0.75rem', fontWeight: 700, color: 'var(--color-accent)', fontFamily: 'var(--font-heading)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '20px' }}>
+              <div style={{ display: 'inline-block', padding: '4px 12px', backgroundColor: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)', borderRadius: '100px', fontSize: '0.75rem', fontWeight: 700, color: 'var(--color-accent)', fontFamily: 'var(--font-heading)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '20px' }}>
                 {tr.badge}
               </div>
               <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: 'var(--color-heading)', lineHeight: 1.2, letterSpacing: '-0.03em', marginBottom: '20px' }}>

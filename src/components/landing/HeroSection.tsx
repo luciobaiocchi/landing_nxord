@@ -70,7 +70,7 @@ const HeroSection: React.FC = () => {
         </div>
 
         {/* Product module cards */}
-        <div id="use-cases" className="reveal active row g-4 justify-content-center mt-2" style={{ maxWidth: '900px', margin: '0 auto' }}>
+        <div id="use-cases" className="reveal active row g-4 mt-2">
 
           <div className="col-12 col-md-6">
             <div style={{
@@ -90,7 +90,7 @@ const HeroSection: React.FC = () => {
             >
               <div style={{
                 width: '40px', height: '40px',
-                backgroundColor: 'rgba(14,165,233,0.1)',
+                backgroundColor: 'rgba(99,102,241,0.1)',
                 borderRadius: '8px',
                 display: 'flex', alignItems: 'center', justifyContent: 'center'
               }}>

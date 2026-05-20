@@ -31,7 +31,7 @@ const AboutSection: React.FC = () => {
         <div className="row g-4 justify-content-center">
           {team.map((member, index) => (
             <div className="col-12 col-sm-6 col-lg-3 reveal active" key={index}>
-              <div className="card text-center" style={{ padding: '32px 24px' }}>
+              <div className="card text-center d-flex flex-column" style={{ padding: '32px 24px' }}>
                 <div className="d-flex justify-content-center mb-3">
                   <div style={{
                     width: '56px', height: '56px', borderRadius: '50%',
@@ -46,7 +46,7 @@ const AboutSection: React.FC = () => {
                 <h4 className="mb-1" style={{ fontSize: '1rem' }}>{member.name}</h4>
                 <p className="small mb-1" style={{ color: 'var(--color-accent)', fontWeight: 600 }}>{member.role}</p>
                 <p className="small mb-3" style={{ color: 'var(--text-muted)' }}>{member.area}</p>
-                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-heading)' }} onClick={() => analytics.trackSocialClick(member.name)}>
+                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-heading)', marginTop: 'auto' }} onClick={() => analytics.trackSocialClick(member.name)}>
                   <BsLinkedin size={20} />
                 </a>
               </div>

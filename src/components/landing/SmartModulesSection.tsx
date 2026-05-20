@@ -28,7 +28,7 @@ const SmartModulesSection: React.FC = () => {
                   <div className="d-flex align-items-center gap-2 mb-3">
                     <div style={{
                       width: '36px', height: '36px', borderRadius: '50%',
-                      backgroundColor: 'rgba(14, 165, 233, 0.1)',
+                      backgroundColor: 'rgba(99, 102, 241, 0.1)',
                       color: 'var(--color-accent)',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                     }}>
@@ -225,7 +225,7 @@ const SmartModulesSection: React.FC = () => {
                     transform: 'translate(-50%, -50%)',
                     width: '90%',
                     borderLeft: '4px solid var(--color-accent)',
-                    boxShadow: '0 15px 35px rgba(14, 165, 233, 0.1)'
+                    boxShadow: '0 15px 35px rgba(99, 102, 241, 0.1)'
                   }}>
                     <div className="d-flex align-items-center gap-3">
                       <div style={{

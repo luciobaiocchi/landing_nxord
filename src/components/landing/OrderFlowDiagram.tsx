@@ -34,13 +34,13 @@ const CP_X = (LB_W + CTR_LX) / 2; // midpoint between left-box right edge and ce
 const channelDefs = {
   it: [
     { Icon: FaWhatsapp, label: 'WhatsApp',   iconColor: '#25D366', bg: 'rgba(37,211,102,0.07)', border: 'rgba(37,211,102,0.28)' },
-    { Icon: FaEnvelope, label: 'Email',       iconColor: '#0ea5e9', bg: 'rgba(14,165,233,0.07)', border: 'rgba(14,165,233,0.28)' },
+    { Icon: FaEnvelope, label: 'Email',       iconColor: '#6366f1', bg: 'rgba(99,102,241,0.07)', border: 'rgba(99,102,241,0.28)' },
     { Icon: FaPhone,    label: 'Audio',    iconColor: '#6366f1', bg: 'rgba(99,102,241,0.07)', border: 'rgba(99,102,241,0.28)' },
     { Icon: FaCamera,   label: 'Foto / PDF',  iconColor: '#f59e0b', bg: 'rgba(245,158,11,0.07)', border: 'rgba(245,158,11,0.28)' },
   ],
   en: [
     { Icon: FaWhatsapp, label: 'WhatsApp',    iconColor: '#25D366', bg: 'rgba(37,211,102,0.07)', border: 'rgba(37,211,102,0.28)' },
-    { Icon: FaEnvelope, label: 'Email',        iconColor: '#0ea5e9', bg: 'rgba(14,165,233,0.07)', border: 'rgba(14,165,233,0.28)' },
+    { Icon: FaEnvelope, label: 'Email',        iconColor: '#6366f1', bg: 'rgba(99,102,241,0.07)', border: 'rgba(99,102,241,0.28)' },
     { Icon: FaPhone,    label: 'Audio',   iconColor: '#6366f1', bg: 'rgba(99,102,241,0.07)', border: 'rgba(99,102,241,0.28)' },
     { Icon: FaCamera,   label: 'Photo / PDF',  iconColor: '#f59e0b', bg: 'rgba(245,158,11,0.07)', border: 'rgba(245,158,11,0.28)' },
   ],
@@ -102,8 +102,8 @@ const OrderFlowDiagram: React.FC = () => {
         {leftBoxes.map((box, i) => (
           <circle key={i} cx={LB_W} cy={box.cy} r="3" fill="#94a3b8" />
         ))}
-        <circle cx={CTR_LX} cy={CTR_CY} r="3.5" fill="#0ea5e9" />
-        <circle cx={CTR_RX} cy={CTR_CY} r="3.5" fill="#0ea5e9" />
+        <circle cx={CTR_LX} cy={CTR_CY} r="3.5" fill="#6366f1" />
+        <circle cx={CTR_RX} cy={CTR_CY} r="3.5" fill="#6366f1" />
 
         {/* ── Left channel boxes ── */}
         {leftBoxes.map((box, i) => (
@@ -151,7 +151,7 @@ const OrderFlowDiagram: React.FC = () => {
             <span style={{ fontSize: '12px', fontWeight: 800, color: '#ffffff', fontFamily: 'Figtree, system-ui, sans-serif', letterSpacing: '-0.01em' }}>
               NxOrd AI
             </span>
-            <span style={{ fontSize: '9px', fontWeight: 600, color: '#0ea5e9', fontFamily: 'Figtree, system-ui, sans-serif', textTransform: 'uppercase', letterSpacing: '0.07em' }}>
+            <span style={{ fontSize: '9px', fontWeight: 600, color: '#6366f1', fontFamily: 'Figtree, system-ui, sans-serif', textTransform: 'uppercase', letterSpacing: '0.07em' }}>
               {lbl.centerSub}
             </span>
           </div>
@@ -163,8 +163,8 @@ const OrderFlowDiagram: React.FC = () => {
             style={{
               width: `${RB_W}px`,
               height: `${RB_H}px`,
-              backgroundColor: 'rgba(14,165,233,0.07)',
-              border: '1.5px solid rgba(14,165,233,0.3)',
+              backgroundColor: 'rgba(99,102,241,0.07)',
+              border: '1.5px solid rgba(99,102,241,0.3)',
               borderRadius: '10px',
               display: 'flex',
               alignItems: 'center',
@@ -173,7 +173,7 @@ const OrderFlowDiagram: React.FC = () => {
               boxSizing: 'border-box',
             }}
           >
-            <FaDatabase size={19} color="#0ea5e9" style={{ flexShrink: 0 }} />
+            <FaDatabase size={19} color="#6366f1" style={{ flexShrink: 0 }} />
             <span style={{ fontSize: '13px', fontWeight: 700, color: '#0f172a', fontFamily: 'Figtree, system-ui, sans-serif', lineHeight: 1.3 }}>
               {lbl.erp[0]}<br />{lbl.erp[1]}
             </span>

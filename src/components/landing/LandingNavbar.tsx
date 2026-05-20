@@ -80,7 +80,7 @@ const LandingNavbar: React.FC = () => {
           zIndex: 1000,
         }}
       >
-        <Container style={{ position: 'relative' }}>
+        <Container>
           <Navbar.Brand as={Link} to="/" className="d-flex align-items-center m-0" style={{ gap: '8px' }}>
             <img src="/logo-circle.png" alt="NxOrd Logo" style={{ height: '30px', width: 'auto' }} />
             <span style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1.35rem', color: 'var(--color-heading)', letterSpacing: '-0.03em' }}>
@@ -92,7 +92,7 @@ const LandingNavbar: React.FC = () => {
 
           <Navbar.Collapse id="main-navbar-collapse">
             {/* Centered nav links */}
-            <Nav className="flex-grow-1 justify-content-center align-items-lg-center navbar-links-centered" style={{ gap: '0.25rem' }}>
+            <Nav className="mx-auto align-items-lg-center" style={{ gap: '0.5rem' }}>
               <Nav.Link
                 onClick={() => scrollToSection('hero')}
                 className="nav-link-custom"
@@ -106,10 +106,10 @@ const LandingNavbar: React.FC = () => {
                 id="use-cases-dropdown"
                 className="nav-link-custom"
               >
-                <NavDropdown.Item as={Link} to="/casi-duso/gestione-ordini" style={{ fontFamily: 'var(--font-heading)', fontWeight: 600, fontSize: '0.9rem' }}>
+                <NavDropdown.Item as={Link} to="/casi-duso/gestione-ordini" style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   {tr.nav.ordersManagement}
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/casi-duso/reparto-sales" style={{ fontFamily: 'var(--font-heading)', fontWeight: 600, fontSize: '0.9rem' }}>
+                <NavDropdown.Item as={Link} to="/casi-duso/reparto-sales" style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   {tr.nav.salesDepartment}
                 </NavDropdown.Item>
               </NavDropdown>

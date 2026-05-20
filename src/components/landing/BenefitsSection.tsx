@@ -208,7 +208,7 @@ const BenefitsSection: React.FC = () => {
                     textTransform: 'uppercase',
                     padding: '2px 6px',
                     borderRadius: '4px',
-                    backgroundColor: activeTab === index ? 'rgba(255, 255, 255, 0.2)' : 'rgba(14, 165, 233, 0.1)',
+                    backgroundColor: activeTab === index ? 'rgba(255, 255, 255, 0.2)' : 'rgba(99, 102, 241, 0.1)',
                     color: activeTab === index ? '#ffffff' : 'var(--color-accent)',
                     whiteSpace: 'nowrap'
                   }}>
