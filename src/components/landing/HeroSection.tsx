@@ -1,210 +1,164 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useLang } from '../../context/LanguageContext';
+import { t } from '../../translations';
 import { analytics } from '../../utils/analytics';
 
 const HeroSection: React.FC = () => {
+  const { lang } = useLang();
+  const tr = t[lang].hero;
+
   return (
-    <section id="hero" style={{ 
-      padding: '80px 0 100px 0', 
-      backgroundColor: 'var(--bg-white)', 
-      borderBottom: '1px solid var(--border-light)' 
+    <section id="hero" style={{
+      padding: '96px 0 80px',
+      backgroundColor: 'var(--bg-white)',
+      borderBottom: '1px solid var(--border-light)'
     }}>
       <div className="container text-center">
-        
-        {/* Pre-Headline Categoria B2B */}
-        <p className="reveal active" style={{ 
+
+        <p className="reveal active" style={{
           fontFamily: 'var(--font-heading)',
-          fontWeight: 700, 
-          fontSize: '0.8125rem', 
-          color: 'var(--color-accent)', 
-          textTransform: 'uppercase', 
+          fontWeight: 700,
+          fontSize: '0.8125rem',
+          color: 'var(--color-accent)',
+          textTransform: 'uppercase',
           letterSpacing: '0.1em',
           marginBottom: '20px'
         }}>
-          Intelligence per Distributori Ho.Re.Ca.
+          {tr.label}
         </p>
 
-        {/* Titolo Principale Impattante (Stile Plato + Classic Serif) */}
-        <h1 className="reveal active mx-auto" style={{ 
-          maxWidth: '920px', 
-          fontSize: 'clamp(2.5rem, 5.5vw, 4.25rem)', 
-          fontWeight: 800, 
-          color: 'var(--color-heading)', 
+        <h1 className="reveal active mx-auto" style={{
+          maxWidth: '860px',
+          fontSize: 'clamp(2.5rem, 5.5vw, 4rem)',
+          fontWeight: 800,
+          color: 'var(--color-heading)',
           lineHeight: 1.15,
           letterSpacing: '-0.03em',
           marginBottom: '24px'
         }}>
-          Più ordini, zero errori, totale controllo.
+          {tr.title}
         </h1>
 
-        {/* Sottotitolo Dettagliato */}
-        <p className="reveal active mx-auto" style={{ 
-          maxWidth: '820px', 
-          color: 'var(--text-muted)', 
-          fontSize: '1.25rem', 
-          lineHeight: 1.6, 
+        <p className="reveal active mx-auto" style={{
+          maxWidth: '680px',
+          color: 'var(--text-muted)',
+          fontSize: '1.1875rem',
+          lineHeight: 1.65,
           marginBottom: '40px'
         }}>
-          La piattaforma modulare che automatizza la ricezione degli ordini, monitora le performance dei tuoi commerciali e applica la Business Intelligence alla tua distribuzione.
+          {tr.subtitle}
         </p>
 
-        {/* Bottoni d'Azione Minimalisti */}
         <div className="reveal active d-flex flex-wrap justify-content-center gap-3 mb-5">
-          <a href="#contact" onClick={() => analytics.trackHeroCTA('Primary Demo')} className="btn-primary-action" style={{ padding: '14px 32px', fontSize: '1rem' }}>
-            Prenota una demo
+          <a
+            href="#contact"
+            onClick={(e) => { e.preventDefault(); analytics.trackHeroCTA('Primary Demo'); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}
+            className="btn-primary-action"
+            style={{ padding: '14px 32px', fontSize: '1rem' }}
+          >
+            {tr.ctaPrimary}
           </a>
-          <a href="#benefits" onClick={() => analytics.trackHeroCTA('Secondary Learn More')} className="btn-ghost-primary" style={{ padding: '14px 32px', fontSize: '1rem' }}>
-            Scopri di più
+          <a
+            href="#use-cases"
+            onClick={(e) => { e.preventDefault(); analytics.trackHeroCTA('Secondary Use Cases'); document.getElementById('use-cases')?.scrollIntoView({ behavior: 'smooth' }); }}
+            className="btn-ghost-primary"
+            style={{ padding: '14px 32px', fontSize: '1rem' }}
+          >
+            {tr.ctaSecondary}
           </a>
         </div>
 
-        {/* KPI Metrics Bar */}
-        <div className="reveal active d-flex flex-wrap justify-content-center gap-5 mt-3 mb-4" style={{ borderTop: '1px solid var(--border-light)', paddingTop: '32px' }}>
-          {[
-            { value: '+15%', label: 'Valore medio per ordine' },
-            { value: '5 ore', label: 'Risparmiate / addetto / settimana' },
-            { value: '8x', label: 'ROI atteso nel primo anno' }
-          ].map((kpi, i) => (
-            <div key={i} style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--color-heading)', letterSpacing: '-0.04em', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
-                {kpi.value}
-              </div>
-              <div style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', marginTop: '6px', fontWeight: 500 }}>
-                {kpi.label}
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Product module cards */}
+        <div id="use-cases" className="reveal active row g-4 justify-content-center mt-2" style={{ maxWidth: '900px', margin: '0 auto' }}>
 
-        {/* Visual Mockup A Tutta Larghezza (ERP & Sales Panel) */}
-        <div className="reveal active mx-auto mt-4" style={{ maxWidth: '1000px' }}>
-          <div className="ui-mockup" style={{ 
-            boxShadow: 'var(--shadow-xl)',
-            borderRadius: '12px',
-            border: '1px solid var(--border-color)',
-            overflow: 'hidden',
-            backgroundColor: '#ffffff'
-          }}>
-            {/* Header Finestra */}
-            <div className="ui-mockup-header" style={{
-              backgroundColor: '#f8fafc',
-              borderBottom: '1px solid var(--border-light)',
-              padding: '12px 20px',
+          <div className="col-12 col-md-6">
+            <div style={{
+              backgroundColor: 'var(--bg-main)',
+              border: '1px solid var(--border-color)',
+              borderRadius: '14px',
+              padding: '36px 32px',
+              textAlign: 'left',
+              height: '100%',
               display: 'flex',
-              alignItems: 'center'
-            }}>
-              <div className="d-flex gap-2">
-                <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
-                <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
-                <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
-              </div>
-              <span style={{ 
-                marginLeft: 'auto', 
-                fontSize: '0.75rem', 
-                color: 'var(--text-muted)', 
-                fontFamily: 'var(--font-heading)', 
-                fontWeight: 700 
+              flexDirection: 'column',
+              gap: '16px',
+              transition: 'box-shadow 0.2s ease, transform 0.2s ease'
+            }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'var(--shadow-md)'; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-2px)'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'none'; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; }}
+            >
+              <div style={{
+                width: '40px', height: '40px',
+                backgroundColor: 'rgba(14,165,233,0.1)',
+                borderRadius: '8px',
+                display: 'flex', alignItems: 'center', justifyContent: 'center'
               }}>
-                NxOrd Sales Platform & ERP Connector
-              </span>
-            </div>
-
-            {/* Layout Interno Mockup */}
-            <div className="p-4" style={{ backgroundColor: '#ffffff', textAlign: 'left' }}>
-              <div className="row g-4">
-                
-                {/* Pannello Email In Entrata */}
-                <div className="col-12 col-md-5">
-                  <div style={{ 
-                    padding: '16px', 
-                    borderRadius: '8px', 
-                    border: '1px solid var(--border-light)', 
-                    backgroundColor: '#f8fafc',
-                    height: '100%'
-                  }}>
-                    <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '12px' }}>
-                      Riconoscimento Ordini
-                    </div>
-                    <div style={{ fontFamily: 'monospace', fontSize: '0.75rem', lineHeight: 1.6, color: 'var(--text-body)' }}>
-                      <div style={{ color: 'var(--color-accent)', fontWeight: 700, marginBottom: '6px' }}>Da: ordini@pizzeriabello.it</div>
-                      <div style={{ borderTop: '1px dashed var(--border-color)', paddingTop: '6px' }}>
-                        Ciao, per domani ci servono:<br />
-                        - 10x Casse Acqua Minerale 1L<br />
-                        - 5x Cartoni Olio di Semi 5L<br />
-                        - 2x Fusti Birra Bionda 30L
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Freccia o Elemento di Processo Centralizzatore */}
-                <div className="col-12 col-md-1 d-flex align-items-center justify-content-center">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="d-none d-md-block">
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                  </svg>
-                </div>
-
-                {/* Pannello Tabella Ordine Strutturato */}
-                <div className="col-12 col-md-6">
-                  <div style={{ 
-                    padding: '16px', 
-                    borderRadius: '8px', 
-                    border: '1px solid var(--border-light)',
-                    height: '100%'
-                  }}>
-                    <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '12px' }}>
-                      Transazione Elaborata (Normalizzata in ERP)
-                    </div>
-                    
-                    <div className="d-flex flex-column gap-2">
-                      <div className="d-flex justify-content-between align-items-center pb-2" style={{ borderBottom: '1px solid var(--border-light)', fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)' }}>
-                        <span>Codice Prodotto</span>
-                        <span>Qtà</span>
-                      </div>
-                      <div className="d-flex justify-content-between align-items-center" style={{ fontSize: '0.8125rem' }}>
-                        <span style={{ color: 'var(--color-heading)', fontWeight: 600 }}>AQ-MIN-1L (Acqua Minerale 1L)</span>
-                        <span style={{ fontWeight: 700 }}>10</span>
-                      </div>
-                      <div className="d-flex justify-content-between align-items-center" style={{ fontSize: '0.8125rem' }}>
-                        <span style={{ color: 'var(--color-heading)', fontWeight: 600 }}>OL-SEM-5L (Olio di Semi 5L)</span>
-                        <span style={{ fontWeight: 700 }}>5</span>
-                      </div>
-                      <div className="d-flex justify-content-between align-items-center" style={{ fontSize: '0.8125rem' }}>
-                        <span style={{ color: 'var(--color-heading)', fontWeight: 600 }}>BI-BIO-30L (Birra Chiara 30L)</span>
-                        <span style={{ fontWeight: 700 }}>2</span>
-                      </div>
-                    </div>
-
-                    {/* Proactive Upsell Overlay */}
-                    <div style={{ 
-                      marginTop: '16px',
-                      padding: '10px 14px',
-                      borderRadius: '6px',
-                      backgroundColor: 'rgba(16, 185, 129, 0.05)',
-                      border: '1px solid rgba(16, 185, 129, 0.2)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '10px'
-                    }}>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                        <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5.5 5.5 0 0 0 12.5 2.5 5.5 5.5 0 0 0 7 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5" />
-                        <path d="M9 18h6M10 22h4" />
-                      </svg>
-                      <div>
-                        <div style={{ fontSize: '0.625rem', textTransform: 'uppercase', fontWeight: 800, color: '#10b981' }}>Raccomandazione AI</div>
-                        <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--color-heading)' }}>
-                          Cliente acquista Patatine Fritte solitamente: <span style={{ color: '#10b981' }}>Proponi 1x Sacco 10kg</span>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
               </div>
+              <div>
+                <h3 style={{ fontSize: '1.1875rem', fontWeight: 800, color: 'var(--color-heading)', marginBottom: '10px', letterSpacing: '-0.02em' }}>
+                  {tr.module1Title}
+                </h3>
+                <p style={{ fontSize: '0.9375rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0 }}>
+                  {tr.module1Desc}
+                </p>
+              </div>
+              <Link
+                to="/casi-duso/gestione-ordini"
+                style={{ color: 'var(--color-accent)', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', marginTop: 'auto', fontFamily: 'var(--font-heading)' }}
+              >
+                {tr.module1Cta}
+              </Link>
             </div>
-
           </div>
+
+          <div className="col-12 col-md-6">
+            <div style={{
+              backgroundColor: 'var(--color-heading)',
+              border: '1px solid var(--color-heading)',
+              borderRadius: '14px',
+              padding: '36px 32px',
+              textAlign: 'left',
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '16px',
+              transition: 'box-shadow 0.2s ease, transform 0.2s ease'
+            }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'var(--shadow-lg)'; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-2px)'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'none'; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; }}
+            >
+              <div style={{
+                width: '40px', height: '40px',
+                backgroundColor: 'rgba(255,255,255,0.12)',
+                borderRadius: '8px',
+                display: 'flex', alignItems: 'center', justifyContent: 'center'
+              }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                  <polyline points="16 7 22 7 22 13" />
+                </svg>
+              </div>
+              <div>
+                <h3 style={{ fontSize: '1.1875rem', fontWeight: 800, color: '#ffffff', marginBottom: '10px', letterSpacing: '-0.02em' }}>
+                  {tr.module2Title}
+                </h3>
+                <p style={{ fontSize: '0.9375rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, margin: 0 }}>
+                  {tr.module2Desc}
+                </p>
+              </div>
+              <Link
+                to="/casi-duso/reparto-sales"
+                style={{ color: 'var(--color-accent)', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', marginTop: 'auto', fontFamily: 'var(--font-heading)' }}
+              >
+                {tr.module2Cta}
+              </Link>
+            </div>
+          </div>
+
         </div>
 
       </div>
