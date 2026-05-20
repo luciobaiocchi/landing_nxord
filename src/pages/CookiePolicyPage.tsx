@@ -67,7 +67,7 @@ const CookiePolicyPage: React.FC = () => {
                   Il Titolare del trattamento dei dati è <strong>NextOrder</strong>, con sede legale in Milano, Italia. (In fase di costituzione societaria - i dettagli legali completi come P.IVA e indirizzo specifico verranno aggiornati non appena disponibili).
                 </p>
                 <p className="mb-3">
-                  Per qualsiasi domanda o per esercitare i tuoi diritti, puoi scriverci a: <a href="mailto:info@nxord.com" style={{ color: 'var(--color-heading)', fontWeight: 500 }}>info@nxord.com</a>.
+                  Per qualsiasi domanda o per esercitare i tuoi diritti, puoi scriverci a: <a href="mailto:luciobaiocchi1@gmail.com" style={{ color: 'var(--color-heading)', fontWeight: 500 }}>luciobaiocchi1@gmail.com</a>.
                 </p>
                 <p className="mb-0">
                   Per ulteriori dettagli sul trattamento dei dati, consulta la nostra <a href="/privacy" style={{ color: 'var(--color-brand)', fontWeight: 600 }}>Privacy Policy completa</a>.

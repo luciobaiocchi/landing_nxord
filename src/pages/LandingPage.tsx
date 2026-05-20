@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import LandingNavbar from '../components/landing/LandingNavbar';
 import HeroSection from '../components/landing/HeroSection';
+// import TestimonialsSection from '../components/landing/TestimonialsSection';
 import FeaturesSection from '../components/landing/FeaturesSection';
+import BenefitsSection from '../components/landing/BenefitsSection';
 import AboutSection from '../components/landing/AboutSection';
 import ContactSection from '../components/landing/ContactSection';
 import Footer from '../components/landing/Footer';
@@ -32,7 +34,9 @@ const LandingPage: React.FC = () => {
     <div className="landing-page bg-main text-body">
       <LandingNavbar />
       <HeroSection />
+      {/*<TestimonialsSection />*/}
       <FeaturesSection />
+      <BenefitsSection />
       <AboutSection />
       <ContactSection />
       <Footer />

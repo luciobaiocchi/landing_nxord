@@ -86,7 +86,7 @@ const TermsOfServicePage: React.FC = () => {
               <section className="mb-0">
                 <h2 className="h4 mb-3 text-accent">8. Contatti</h2>
                 <p className="mb-0">
-                  Per qualsiasi domanda riguardante questi Termini, si prega di contattarci all'indirizzo email: <a href="mailto:info@nxord.com" style={{ color: 'var(--color-heading)', fontWeight: 500 }}>info@nxord.com</a>
+                  Per qualsiasi domanda riguardante questi Termini, si prega di contattarci all'indirizzo email: <a href="mailto:luciobaiocchi1@gmail.com" style={{ color: 'var(--color-heading)', fontWeight: 500 }}>luciobaiocchi1@gmail.com</a>
                 </p>
               </section>
             </div>

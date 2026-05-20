@@ -1,16 +1,10 @@
 import React from 'react';
-import { Container, Navbar, Nav, Offcanvas } from 'react-bootstrap';
+import { Container, Navbar, Nav } from 'react-bootstrap';
 import { analytics } from '../../utils/analytics';
 
 const LandingNavbar: React.FC = () => {
-  const [show, setShow] = React.useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   const handleScroll = (e: React.MouseEvent<HTMLElement>, targetId: string) => {
     e.preventDefault();
-    handleClose();
     const element = document.getElementById(targetId);
     if (element) {
       setTimeout(() => {
@@ -21,28 +15,22 @@ const LandingNavbar: React.FC = () => {
 
   const handleLoginClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-
-    // Evento GA4
     analytics.trackLoginClick();
 
     const APP_URL = "https://app.nxord.com/login";
     const TEST_IMG = "https://app.nxord.com/static/logo.png";
-
     const img = new Image();
 
     img.onload = () => {
-      // App is reachable — go to login
       window.location.href = APP_URL;
     };
 
     img.onerror = () => {
-      // App is down — show maintenance page
       window.location.href = "/unavailable";
     };
 
     img.src = `${TEST_IMG}?t=${new Date().getTime()}`;
 
-    // Safety timeout
     setTimeout(() => {
       if (!img.complete) {
         img.src = "";
@@ -52,56 +40,86 @@ const LandingNavbar: React.FC = () => {
   };
 
   return (
-    <Navbar
-      expand="lg"
-      className="py-2 w-100"
-      style={{
-        backgroundColor: 'rgba(248, 250, 252, 0.85)',
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
-        borderBottom: '1px solid var(--border-light)',
-        position: 'sticky',
-        top: 0,
-        zIndex: 1000,
-      }}
-    >
-      <Container>
-        <Navbar.Brand href="/" className="d-flex align-items-center m-0" style={{ gap: '10px' }}>
-          <img
-            src="/logo-circle.png"
-            alt="NxOrd Logo"
-            style={{ height: '32px', width: 'auto' }}
-          />
-          <span style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.25rem', color: 'var(--color-heading)', letterSpacing: '-0.02em' }}>
-            NxOrd
-          </span>
-        </Navbar.Brand>
+    <>
+      {/* Announcement Bar (Identica a Plato seed round banner) */}
+      <div style={{
+        backgroundColor: '#0f172a',
+        color: '#ffffff',
+        fontSize: '0.8125rem',
+        fontWeight: 600,
+        textAlign: 'center',
+        padding: '10px 16px',
+        fontFamily: 'var(--font-heading)',
+        letterSpacing: '0.01em',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '8px',
+        flexWrap: 'wrap'
+      }}>
+        <span>Abbiamo raccolto il nostro Seed Round da $14.5M per trasformare le vendite B2B Ho.Re.Ca.</span>
+        <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} style={{ color: '#38bdf8', textDecoration: 'underline', fontWeight: 700 }}>
+          Scopri le posizioni aperte e unisciti a noi &rarr;
+        </a>
+      </div>
 
-        <Navbar.Toggle aria-controls="offcanvasNavbar-expand-lg" onClick={handleShow} className="border-0 shadow-none" />
+      {/* Main Navbar */}
+      <Navbar
+        expand="lg"
+        className="py-3 w-100"
+        style={{
+          backgroundColor: 'rgba(255, 255, 255, 0.95)',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
+          borderBottom: '1px solid var(--border-light)',
+          position: 'sticky',
+          top: 0,
+          zIndex: 1000,
+        }}
+      >
+        <Container>
+          <Navbar.Brand href="/" className="d-flex align-items-center m-0" style={{ gap: '8px' }}>
+            <img
+              src="/logo-circle.png"
+              alt="NxOrd Logo"
+              style={{ height: '30px', width: 'auto' }}
+            />
+            <span style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1.35rem', color: 'var(--color-heading)', letterSpacing: '-0.03em' }}>
+              NxOrd
+            </span>
+          </Navbar.Brand>
 
-        <Navbar.Offcanvas
-          id="offcanvasNavbar-expand-lg"
-          placement="end"
-          show={show}
-          onHide={handleClose}
-          style={{ backgroundColor: 'var(--bg-main)' }}
-        >
-          <Offcanvas.Header closeButton />
-          <Offcanvas.Body className="align-items-center">
-            <Nav className="mx-auto text-center" style={{ gap: '0.25rem' }}>
-              <Nav.Link href="#features" onClick={(e) => handleScroll(e, 'features')} className="nav-link-custom mx-lg-2">Come Funziona</Nav.Link>
-              <Nav.Link href="#about" onClick={(e) => handleScroll(e, 'about')} className="nav-link-custom mx-lg-2">Chi Siamo</Nav.Link>
-              <Nav.Link href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="nav-link-custom mx-lg-2">Contatti</Nav.Link>
+          <Navbar.Toggle aria-controls="offcanvasNavbar-expand-lg" className="border-0 shadow-none" />
+
+          <Navbar.Collapse id="offcanvasNavbar-expand-lg">
+            <Nav className="mx-auto" style={{ gap: '1.5rem' }}>
+              <Nav.Link href="#benefits" onClick={(e) => handleScroll(e, 'benefits')} className="nav-link-custom">Prodotto</Nav.Link>
+              <Nav.Link href="#features" onClick={(e) => handleScroll(e, 'features')} className="nav-link-custom">Sales Management</Nav.Link>
+              <Nav.Link href="#proactive" onClick={(e) => handleScroll(e, 'features')} className="nav-link-custom">Field Sales</Nav.Link>
+              <Nav.Link href="#automation" onClick={(e) => handleScroll(e, 'features')} className="nav-link-custom">Inside Sales</Nav.Link>
+              <Nav.Link href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="nav-link-custom">Risorse</Nav.Link>
             </Nav>
-            <div className="text-center mt-3 mt-lg-0 ms-lg-3">
-              <a href="https://app.nxord.com/login" onClick={handleLoginClick} className="btn-ghost-primary">
-                Login Cliente
+
+            <div className="d-flex align-items-center justify-content-center gap-3 mt-3 mt-lg-0">
+              <a href="https://app.nxord.com/login" onClick={handleLoginClick} style={{ 
+                fontFamily: 'var(--font-heading)',
+                color: 'var(--color-heading)',
+                fontSize: '0.9375rem',
+                fontWeight: 700,
+                textDecoration: 'none',
+                padding: '8px 16px'
+              }}>
+                Accedi
+              </a>
+              <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="btn-primary-action" style={{ padding: '10px 20px', fontSize: '0.90625rem' }}>
+                Prenota una demo
               </a>
             </div>
-          </Offcanvas.Body>
-        </Navbar.Offcanvas>
-      </Container>
-    </Navbar>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </>
   );
 };
 

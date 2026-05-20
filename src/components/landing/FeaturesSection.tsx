@@ -1,96 +1,139 @@
 import React from 'react';
 
 const FeaturesSection: React.FC = () => {
-  const steps = [
-    {
-      num: '01',
-      title: 'Il cliente invia la solita email',
-      desc: 'Nessun cambiamento per i tuoi clienti: continuano a inviare gli ordini come hanno sempre fatto, senza dover imparare nuovi portali o app.',
-    },
-    {
-      num: '02',
-      title: 'Estrazione e Normalizzazione',
-      desc: "NxOrd analizza il testo dell'email ed estrae automaticamente i dati: codici prodotto esatti, quantità e note, uniformandoli al tuo catalogo.",
-    },
-    {
-      num: '03',
-      title: 'Pronto per il tuo gestionale',
-      desc: "L'ordine è formattato e direttamente esportabile o integrabile nel tuo gestionale. Nessun copia-incolla, zero errori umani.",
-    },
-  ];
-
   return (
-    <section id="features" className="bg-light">
+    <section id="features" style={{ backgroundColor: 'var(--bg-white)', padding: '96px 0' }}>
       <div className="container">
-        <div className="text-center mb-5">
-          <p className="text-accent mb-2" style={{ fontFamily: 'var(--font-heading)', fontWeight: 600, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-            Processo
-          </p>
-          <h2>Come Funziona</h2>
-          <p className="mx-auto" style={{ maxWidth: '600px' }}>
-            Un processo trasparente e immediato, progettato per integrarsi senza attriti nel tuo flusso di lavoro.
-          </p>
-        </div>
-
-        <div className="d-flex flex-column align-items-center position-relative" style={{ maxWidth: '600px', margin: '0 auto' }}>
-          {steps.map((step, index) => (
-            <React.Fragment key={step.num}>
-              <div 
-                className="card w-100 text-center" 
-                style={{ 
-                  borderTop: '3px solid var(--color-accent)',
-                  position: 'relative',
-                  zIndex: 2,
-                  backgroundColor: '#fff' // Ensure it covers the line behind if it overlaps
-                }}
-              >
-                <span style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontWeight: 800,
-                  fontSize: '2rem',
-                  color: 'var(--color-accent)',
-                  opacity: 0.3,
-                  lineHeight: 1,
-                  marginBottom: '16px',
-                  display: 'block',
-                }}>
-                  {step.num}
-                </span>
-                <h3>{step.title}</h3>
-                <p>{step.desc}</p>
+        
+        {/* BLOCCO 1: Vendite Proattive (Testo a Sinistra, Grafico a Destra) */}
+        <div className="row align-items-center g-5 mb-5 pb-5 reveal active">
+          <div className="col-12 col-lg-6">
+            <p className="text-accent mb-2" style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+              Sales Intelligence
+            </p>
+            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--color-heading)', letterSpacing: '-0.03em', marginBottom: '20px' }}>
+              Gestisci le vendite in modo proattivo
+            </h2>
+            <p style={{ color: 'var(--text-body)', fontSize: '1.0625rem', lineHeight: 1.6, marginBottom: '24px' }}>
+              L'intelligenza artificiale di NxOrd analizza migliaia di segnali di acquisto ed identifica in automatico le opportunità commerciali più rilevanti per la tua rete vendita.
+            </p>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9375rem', lineHeight: 1.6, margin: 0 }}>
+              I tuoi agenti sul campo possono agire proattivamente conoscendo in anticipo quali clienti stanno riducendo gli acquisti (rischio churn) e quali prodotti alternativi o in promozione proporre per aumentare il fatturato.
+            </p>
+          </div>
+          
+          <div className="col-12 col-lg-6">
+            <div style={{
+              backgroundColor: '#f8fafc',
+              border: '1px solid var(--border-color)',
+              borderRadius: '8px',
+              padding: '24px',
+              boxShadow: 'var(--shadow-sm)'
+            }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '16px' }}>
+                Rilevazione Opportunità Commerciali (Live)
               </div>
-
-              {/* Dotted connecting line between cards, except after the last card */}
-              {index !== steps.length - 1 && (
-                <div 
-                  style={{
-                    height: '40px',
-                    width: '0',
-                    borderLeft: '2px dashed var(--color-accent)',
-                    margin: '10px 0',
-                    opacity: 0.5
-                  }}
-                ></div>
-              )}
-            </React.Fragment>
-          ))}
-        </div>
-
-        {/* Video Embed */}
-        <div className="mt-5" style={{ maxWidth: '800px', margin: '4rem auto 0 auto' }}>
-          <div className="p-2 rounded-4 overflow-hidden shadow-lg bg-white border border-light">
-            <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
-              <iframe 
-                src="https://www.youtube.com/embed/SZ4asFQi1tw" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen 
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', borderRadius: '0.5rem' }}
-                title="NextOrder Demo"
-              ></iframe>
+              <div className="d-flex flex-column gap-3">
+                <div style={{ padding: '12px 16px', backgroundColor: '#ffffff', border: '1px solid var(--border-light)', borderRadius: '6px', borderLeft: '4px solid var(--color-accent)' }}>
+                  <div style={{ fontWeight: 700, fontSize: '0.875rem', color: 'var(--color-heading)' }}>Pizzeria Da Franco</div>
+                  <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '2px' }}>Frequenza acquisto birre diminuita del 40%. Contattare subito.</div>
+                </div>
+                <div style={{ padding: '12px 16px', backgroundColor: '#ffffff', border: '1px solid var(--border-light)', borderRadius: '6px', borderLeft: '4px solid #10b981' }}>
+                  <div style={{ fontWeight: 700, fontSize: '0.875rem', color: 'var(--color-heading)' }}>Ristorante Centrale</div>
+                  <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '2px' }}>Acquista regolarmente Hamburger ma non ha ordinato Patatine.</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
+        {/* BLOCCO 2: Automazione Manuale (Grafico a Sinistra, Testo a Destra) */}
+        <div className="row align-items-center g-5 mb-5 pb-5 reveal active">
+          <div className="col-12 col-lg-6 order-2 order-lg-1">
+            <div style={{
+              backgroundColor: '#f8fafc',
+              border: '1px solid var(--border-color)',
+              borderRadius: '8px',
+              padding: '24px',
+              boxShadow: 'var(--shadow-sm)'
+            }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '16px' }}>
+                Flusso Automazione Risparmio Tempo
+              </div>
+              <div className="d-flex flex-column gap-2" style={{ fontSize: '0.8125rem' }}>
+                <div className="d-flex justify-content-between p-2 rounded bg-white border border-light">
+                  <span style={{ fontWeight: 600 }}>Decodifica PDF / WhatsApp</span>
+                  <span style={{ color: '#10b981', fontWeight: 700 }}>Completato (3s)</span>
+                </div>
+                <div className="d-flex justify-content-between p-2 rounded bg-white border border-light">
+                  <span style={{ fontWeight: 600 }}>Normalizzazione Codici Prodotto</span>
+                  <span style={{ color: '#10b981', fontWeight: 700 }}>Completato</span>
+                </div>
+                <div className="d-flex justify-content-between p-2 rounded bg-white border border-light">
+                  <span style={{ fontWeight: 600 }}>Inserimento in ERP Gestionale</span>
+                  <span style={{ color: '#10b981', fontWeight: 700 }}>Sincronizzato</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-12 col-lg-6 order-1 order-lg-2">
+            <p className="text-accent mb-2" style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+              Efficienza
+            </p>
+            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--color-heading)', letterSpacing: '-0.03em', marginBottom: '20px' }}>
+              Automatizza le attività amministrative
+            </h2>
+            <p style={{ color: 'var(--text-body)', fontSize: '1.0625rem', lineHeight: 1.6, marginBottom: '24px' }}>
+              Dai più tempo alla tua rete vendita per vendere e riduci drasticamente il lavoro di inserimento manuale degli ordini.
+            </p>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9375rem', lineHeight: 1.6, margin: 0 }}>
+              NxOrd riconosce ed estrae gli ordini in tempo reale da email, messaggi e documenti inviati dai clienti, compila le proposte e le inserisce direttamente nel tuo ERP. Ogni addetto del tuo team risparmia fino a 5 ore di lavoro manuale ogni settimana.
+            </p>
+          </div>
+        </div>
+
+        {/* BLOCCO 3: Piattaforma Tutto-in-Uno (Testo a Sinistra, Grafico a Destra) */}
+        <div className="row align-items-center g-5 reveal active">
+          <div className="col-12 col-lg-6">
+            <p className="text-accent mb-2" style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+              Integrazione ERP
+            </p>
+            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--color-heading)', letterSpacing: '-0.03em', marginBottom: '20px' }}>
+              Piattaforma integrata senza sostituire il tuo ERP
+            </h2>
+            <p style={{ color: 'var(--text-body)', fontSize: '1.0625rem', lineHeight: 1.6, marginBottom: '24px' }}>
+              Ottieni l'accesso alle più moderne tecnologie di automazione delle vendite senza la necessità di sostituire i tuoi software gestionali o di cambiare le abitudini operative del tuo team.
+            </p>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9375rem', lineHeight: 1.6, margin: 0 }}>
+              NxOrd si posiziona come un add-on intelligente sopra il tuo sistema ERP o di magazzino attuale. L'integrazione è rapida, sicura e indolore, assicurando ai distributori Ho.Re.Ca. un vantaggio competitivo immediato e tangibile.
+            </p>
+          </div>
+
+          <div className="col-12 col-lg-6">
+            <div style={{
+              backgroundColor: '#f8fafc',
+              border: '1px solid var(--border-color)',
+              borderRadius: '8px',
+              padding: '24px',
+              boxShadow: 'var(--shadow-sm)',
+              textAlign: 'center'
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+                <div style={{ padding: '12px 20px', backgroundColor: '#ffffff', border: '1px solid var(--border-light)', borderRadius: '6px', fontWeight: 700, color: 'var(--color-heading)', fontSize: '0.875rem' }}>
+                  Tuo ERP Attuale
+                </div>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 3a2.82 2.82 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
+                </svg>
+                <div style={{ padding: '12px 20px', backgroundColor: 'var(--color-brand)', borderRadius: '6px', fontWeight: 700, color: '#ffffff', fontSize: '0.875rem' }}>
+                  NxOrd Intelligence
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

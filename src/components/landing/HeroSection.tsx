@@ -3,88 +3,192 @@ import { analytics } from '../../utils/analytics';
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="bg-tech-dots position-relative overflow-hidden" style={{ padding: '80px 0 72px' }}>
-      <div className="container">
-        <div className="hero-grid">
+    <section id="hero" style={{ 
+      padding: '80px 0 100px 0', 
+      backgroundColor: 'var(--bg-white)', 
+      borderBottom: '1px solid var(--border-light)' 
+    }}>
+      <div className="container text-center">
+        
+        {/* Pre-Headline Categoria B2B */}
+        <p className="reveal active" style={{ 
+          fontFamily: 'var(--font-heading)',
+          fontWeight: 700, 
+          fontSize: '0.8125rem', 
+          color: 'var(--color-accent)', 
+          textTransform: 'uppercase', 
+          letterSpacing: '0.1em',
+          marginBottom: '20px'
+        }}>
+          Sales Intelligence per Distributori Ho.Re.Ca.
+        </p>
 
-          {/* === COLONNA SINISTRA: Testo === */}
-          <div style={{ textAlign: 'left', borderLeft: '4px solid var(--color-accent)', paddingLeft: '24px' }}>
+        {/* Titolo Principale Impattante (Stile Plato + Classic Serif) */}
+        <h1 className="reveal active mx-auto" style={{ 
+          maxWidth: '920px', 
+          fontSize: 'clamp(2.5rem, 5.5vw, 4.25rem)', 
+          fontWeight: 800, 
+          color: 'var(--color-heading)', 
+          lineHeight: 1.15,
+          letterSpacing: '-0.03em',
+          marginBottom: '24px'
+        }}>
+          Più ordini, zero errori, totale controllo.
+        </h1>
 
-            {/* Headline */}
-            <h1 className="mb-3" style={{ fontWeight: 800 }}>
-              Da un'email confusa a un ordine pronto in{' '}
-              <span style={{ color: 'var(--color-accent)' }}>pochi secondi</span>
-            </h1>
+        {/* Sottotitolo Dettagliato */}
+        <p className="reveal active mx-auto" style={{ 
+          maxWidth: '820px', 
+          color: 'var(--text-muted)', 
+          fontSize: '1.25rem', 
+          lineHeight: 1.6, 
+          marginBottom: '40px'
+        }}>
+          La piattaforma modulare che automatizza la ricezione degli ordini, monitora le performance dei tuoi commerciali e applica la Business Intelligence alla tua distribuzione.
+        </p>
 
-            {/* Paragrafo */}
-            <p style={{ color: 'var(--text-muted)', maxWidth: '480px', fontSize: '1.0625rem', lineHeight: 1.6 }}>
-Da email, WhatsApp, PDF o note vocali: NxOrd elabora ordini in qualsiasi formato. 
-              Estrae in automatico codici prodotto e quantità, generando un flusso dati strutturato e pronto per il tuo gestionale. 
-              Zero data entry, zero errori.            
-              </p>
+        {/* Bottoni d'Azione Minimalisti */}
+        <div className="reveal active d-flex flex-wrap justify-content-center gap-3 mb-5">
+          <a href="#contact" onClick={() => analytics.trackHeroCTA('Primary Demo')} className="btn-primary-action" style={{ padding: '14px 32px', fontSize: '1rem' }}>
+            Prenota una demo
+          </a>
+          <a href="#benefits" onClick={() => analytics.trackHeroCTA('Secondary Learn More')} className="btn-ghost-primary" style={{ padding: '14px 32px', fontSize: '1rem' }}>
+            Scopri di più
+          </a>
+        </div>
 
-            {/* CTA */}
-            <a href="#contact" className="btn-primary-action" onClick={() => analytics.trackHeroCTA()}>
-              Richiedi accesso
-            </a>
-          </div>
-
-          {/* === COLONNA DESTRA: UI Mockup === */}
-          <div className="ui-mockup">
-            {/* Finta barra titolo finestra */}
-            <div className="ui-mockup-header">
-              <div className="ui-mockup-dot" style={{ backgroundColor: '#ef4444' }} />
-              <div className="ui-mockup-dot" style={{ backgroundColor: '#f59e0b' }} />
-              <div className="ui-mockup-dot" style={{ backgroundColor: '#22c55e' }} />
-              <span style={{ marginLeft: 'auto', fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: 'var(--font-heading)', fontWeight: 600 }}>NxOrd Dashboard</span>
+        {/* Visual Mockup A Tutta Larghezza (ERP & Sales Panel) */}
+        <div className="reveal active mx-auto mt-4" style={{ maxWidth: '1000px' }}>
+          <div className="ui-mockup" style={{ 
+            boxShadow: 'var(--shadow-xl)',
+            borderRadius: '12px',
+            border: '1px solid var(--border-color)',
+            overflow: 'hidden',
+            backgroundColor: '#ffffff'
+          }}>
+            {/* Header Finestra */}
+            <div className="ui-mockup-header" style={{
+              backgroundColor: '#f8fafc',
+              borderBottom: '1px solid var(--border-light)',
+              padding: '12px 20px',
+              display: 'flex',
+              alignItems: 'center'
+            }}>
+              <div className="d-flex gap-2">
+                <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
+                <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
+                <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
+              </div>
+              <span style={{ 
+                marginLeft: 'auto', 
+                fontSize: '0.75rem', 
+                color: 'var(--text-muted)', 
+                fontFamily: 'var(--font-heading)', 
+                fontWeight: 700 
+              }}>
+                NxOrd Sales Platform & ERP Connector
+              </span>
             </div>
 
-            {/* Blocco Email in entrata */}
-            <div className="ui-mockup-label">📩 Email ricevuta</div>
-            <div className="ui-mockup-row" style={{ display: 'block', fontFamily: 'monospace', fontSize: '0.75rem', lineHeight: 1.7, color: 'var(--text-body)' }}>
-              <div style={{ color: 'var(--text-muted)', marginBottom: '4px' }}>Da: ordini@ristorantedamarco.it</div>
-              <div style={{ borderTop: '1px solid var(--border-light)', paddingTop: '6px' }}>
-                Buongiorno, vi invio l'ordine per domani:<br />
-                - 3 casse Acqua Panna 1L<br />
-                - 2 cartoni Coca Cola 33cl<br />
-                - Mezzo bancale becks 33<br />
-                Grazie, Marco
+            {/* Layout Interno Mockup */}
+            <div className="p-4" style={{ backgroundColor: '#ffffff', textAlign: 'left' }}>
+              <div className="row g-4">
+                
+                {/* Pannello Email In Entrata */}
+                <div className="col-12 col-md-5">
+                  <div style={{ 
+                    padding: '16px', 
+                    borderRadius: '8px', 
+                    border: '1px solid var(--border-light)', 
+                    backgroundColor: '#f8fafc',
+                    height: '100%'
+                  }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '12px' }}>
+                      Riconoscimento Ordini
+                    </div>
+                    <div style={{ fontFamily: 'monospace', fontSize: '0.75rem', lineHeight: 1.6, color: 'var(--text-body)' }}>
+                      <div style={{ color: 'var(--color-accent)', fontWeight: 700, marginBottom: '6px' }}>Da: ordini@pizzeriabello.it</div>
+                      <div style={{ borderTop: '1px dashed var(--border-color)', paddingTop: '6px' }}>
+                        Ciao, per domani ci servono:<br />
+                        - 10x Casse Acqua Minerale 1L<br />
+                        - 5x Cartoni Olio di Semi 5L<br />
+                        - 2x Fusti Birra Bionda 30L
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Freccia o Elemento di Processo Centralizzatore */}
+                <div className="col-12 col-md-1 d-flex align-items-center justify-content-center">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="d-none d-md-block">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </div>
+
+                {/* Pannello Tabella Ordine Strutturato */}
+                <div className="col-12 col-md-6">
+                  <div style={{ 
+                    padding: '16px', 
+                    borderRadius: '8px', 
+                    border: '1px solid var(--border-light)',
+                    height: '100%'
+                  }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '12px' }}>
+                      Transazione Elaborata (Normalizzata in ERP)
+                    </div>
+                    
+                    <div className="d-flex flex-column gap-2">
+                      <div className="d-flex justify-content-between align-items-center pb-2" style={{ borderBottom: '1px solid var(--border-light)', fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)' }}>
+                        <span>Codice Prodotto</span>
+                        <span>Qtà</span>
+                      </div>
+                      <div className="d-flex justify-content-between align-items-center" style={{ fontSize: '0.8125rem' }}>
+                        <span style={{ color: 'var(--color-heading)', fontWeight: 600 }}>AQ-MIN-1L (Acqua Minerale 1L)</span>
+                        <span style={{ fontWeight: 700 }}>10</span>
+                      </div>
+                      <div className="d-flex justify-content-between align-items-center" style={{ fontSize: '0.8125rem' }}>
+                        <span style={{ color: 'var(--color-heading)', fontWeight: 600 }}>OL-SEM-5L (Olio di Semi 5L)</span>
+                        <span style={{ fontWeight: 700 }}>5</span>
+                      </div>
+                      <div className="d-flex justify-content-between align-items-center" style={{ fontSize: '0.8125rem' }}>
+                        <span style={{ color: 'var(--color-heading)', fontWeight: 600 }}>BI-BIO-30L (Birra Chiara 30L)</span>
+                        <span style={{ fontWeight: 700 }}>2</span>
+                      </div>
+                    </div>
+
+                    {/* Proactive Upsell Overlay */}
+                    <div style={{ 
+                      marginTop: '16px',
+                      padding: '10px 14px',
+                      borderRadius: '6px',
+                      backgroundColor: 'rgba(16, 185, 129, 0.05)',
+                      border: '1px solid rgba(16, 185, 129, 0.2)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px'
+                    }}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                        <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5.5 5.5 0 0 0 12.5 2.5 5.5 5.5 0 0 0 7 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5" />
+                        <path d="M9 18h6M10 22h4" />
+                      </svg>
+                      <div>
+                        <div style={{ fontSize: '0.625rem', textTransform: 'uppercase', fontWeight: 800, color: '#10b981' }}>Raccomandazione AI</div>
+                        <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--color-heading)' }}>
+                          Cliente acquista Patatine Fritte solitamente: <span style={{ color: '#10b981' }}>Proponi 1x Sacco 10kg</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
               </div>
             </div>
 
-            {/* Freccia */}
-            <div className="ui-mockup-arrow">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 5v14M19 12l-7 7-7-7" />
-              </svg>
-            </div>
-
-            {/* Blocco Tabella Ordine */}
-            <div className="ui-mockup-label">✅ Ordine strutturato</div>
-            {/* Header riga */}
-            <div className="ui-mockup-row" style={{ fontSize: '0.6875rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase' as const, letterSpacing: '0.05em', background: 'transparent', border: 'none', padding: '4px 12px', marginBottom: '4px' }}>
-              <span style={{ flex: '1' }}>Codice</span>
-              <span style={{ flex: '2' }}>Prodotto</span>
-              <span style={{ flex: '0.5', textAlign: 'right' }}>Qtà</span>
-            </div>
-            <div className="ui-mockup-row" style={{ fontSize: '0.8125rem' }}>
-              <span style={{ flex: '1', color: 'var(--color-accent)', fontWeight: 600, fontFamily: 'monospace' }}>AP-1L</span>
-              <span style={{ flex: '2', color: 'var(--color-heading)' }}>Acqua Panna 1L</span>
-              <span style={{ flex: '0.5', textAlign: 'right', fontWeight: 700 }}>3</span>
-            </div>
-            <div className="ui-mockup-row" style={{ fontSize: '0.8125rem' }}>
-              <span style={{ flex: '1', color: 'var(--color-accent)', fontWeight: 600, fontFamily: 'monospace' }}>CC-33</span>
-              <span style={{ flex: '2', color: 'var(--color-heading)' }}>Coca Cola 33cl</span>
-              <span style={{ flex: '0.5', textAlign: 'right', fontWeight: 700 }}>2</span>
-            </div>
-            <div className="ui-mockup-row" style={{ fontSize: '0.8125rem' }}>
-              <span style={{ flex: '1', color: 'var(--color-accent)', fontWeight: 600, fontFamily: 'monospace' }}>BK-04</span>
-              <span style={{ flex: '2', color: 'var(--color-heading)' }}>Becks 33clx24</span>
-              <span style={{ flex: '0.5', textAlign: 'right', fontWeight: 700 }}>63</span>
-            </div>
           </div>
-
         </div>
+
       </div>
     </section>
   );
