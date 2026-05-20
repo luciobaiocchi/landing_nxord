@@ -39,35 +39,29 @@ const ContactSection: React.FC = () => {
               Let’s have a chat!
             </h2>
             <p style={{ color: 'var(--text-body)', fontSize: '1.125rem', lineHeight: 1.6, marginBottom: '32px' }}>
-              Non vediamo l'ora di comprendere i tuoi obiettivi commerciali e le sfide di logistica/magazzino della tua azienda distributrice. Parliamo insieme del potenziale di crescita per il tuo team in un colloquio non vincolante.
+              Non vediamo l'ora di comprendere i tuoi obiettivi commerciali e le sfide di logistica/magazzino della tua azienda. Parliamo insieme del potenziale di crescita per il tuo team in un colloquio non vincolante.
             </p>
 
-            <ul style={{ 
-              listStyle: 'none', 
-              padding: 0, 
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
               margin: 0,
               display: 'flex',
               flexDirection: 'column',
               gap: '20px'
             }}>
-              <li style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', fontSize: '0.96875rem', color: 'var(--color-heading)', fontWeight: 600 }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Analisi gratuita del potenziale di automazione per te ed il tuo team commerciale.</span>
-              </li>
-              <li style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', fontSize: '0.96875rem', color: 'var(--color-heading)', fontWeight: 600 }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Condivisione di best practice e casi studio reali di altri distributori B2B Ho.Re.Ca.</span>
-              </li>
-              <li style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', fontSize: '0.96875rem', color: 'var(--color-heading)', fontWeight: 600 }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Una panoramica completa di NxOrd strutturata su misura per i tuoi interessi.</span>
-              </li>
+              {[
+                'Analisi gratuita del potenziale di automazione per te ed il tuo team commerciale.',
+                'Condivisione di best practice e casi studio reali di altri distributori B2B Ho.Re.Ca.',
+                'Una panoramica completa di NxOrd strutturata su misura per i tuoi interessi.'
+              ].map((text, i) => (
+                <li key={i} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', fontSize: '0.96875rem', color: 'var(--color-heading)', fontWeight: 600 }}>
+                  <span style={{ flexShrink: 0, width: '24px', height: '24px', borderRadius: '50%', backgroundColor: 'var(--bg-main)', border: '1px solid var(--border-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.6875rem', fontWeight: 800, color: 'var(--color-accent)', fontFamily: 'var(--font-heading)', marginTop: '1px' }}>
+                    {i + 1}
+                  </span>
+                  <span>{text}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
