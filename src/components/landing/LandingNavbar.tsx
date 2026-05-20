@@ -80,7 +80,7 @@ const LandingNavbar: React.FC = () => {
           zIndex: 1000,
         }}
       >
-        <Container>
+        <Container style={{ position: 'relative' }}>
           <Navbar.Brand as={Link} to="/" className="d-flex align-items-center m-0" style={{ gap: '8px' }}>
             <img src="/logo-circle.png" alt="NxOrd Logo" style={{ height: '30px', width: 'auto' }} />
             <span style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1.35rem', color: 'var(--color-heading)', letterSpacing: '-0.03em' }}>
@@ -92,7 +92,7 @@ const LandingNavbar: React.FC = () => {
 
           <Navbar.Collapse id="main-navbar-collapse">
             {/* Centered nav links */}
-            <Nav className="flex-grow-1 justify-content-center align-items-lg-center" style={{ gap: '0.25rem' }}>
+            <Nav className="flex-grow-1 justify-content-center align-items-lg-center navbar-links-centered" style={{ gap: '0.25rem' }}>
               <Nav.Link
                 onClick={() => scrollToSection('hero')}
                 className="nav-link-custom"

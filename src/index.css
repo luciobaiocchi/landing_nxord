@@ -440,6 +440,15 @@ button {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* ── Navbar links truly centered on desktop ── */
+@media (min-width: 992px) {
+  .navbar-links-centered {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .bento-card:hover .blur-bg-content {
   filter: blur(3px);
   opacity: 0.45;
