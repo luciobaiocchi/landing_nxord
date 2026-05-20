@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { analytics } from '../../utils/analytics';
-import lucioImg from '../../assets/lucio.png';
+import thomasImg from '../../assets/thomas.jpeg';
 
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -17,7 +17,7 @@ const ContactSection: React.FC = () => {
     
     // Simulate email dispatch or lead notification
     setTimeout(() => {
-      window.location.href = `mailto:luciobaiocchi1@gmail.com?subject=Richiesta%20Demo%20NxOrd%20-%20${formData.azienda}&body=Ciao,%20sono%20${formData.nome}%20di%20${formData.azienda}.%20Vorrei%20prenotare%20una%20demo%20per%20NxOrd.%20Email:%20${formData.email}`;
+      window.location.href = `mailto:thomaskellywork24@gmail.com?subject=Richiesta%20Demo%20NxOrd%20-%20${formData.azienda}&body=Ciao,%20sono%20${formData.nome}%20di%20${formData.azienda}.%20Vorrei%20prenotare%20una%20demo%20per%20NxOrd.%20Email:%20${formData.email}`;
     }, 1000);
   };
 
@@ -55,13 +55,13 @@ const ContactSection: React.FC = () => {
               marginBottom: '28px'
             }}>
               <img
-                src={lucioImg}
-                alt="Lucio Baiocchi"
+                src={thomasImg}
+                alt="Thomas Kelly"
                 style={{ width: '52px', height: '52px', borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
               />
               <div>
                 <div style={{ fontWeight: 700, fontSize: '0.9375rem', color: 'var(--color-heading)' }}>
-                  Lucio Baiocchi
+                  Thomas Kelly
                 </div>
                 <div style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', marginTop: '2px' }}>
                   Co-Founder, NxOrd · Rispondo personalmente a ogni richiesta.
@@ -110,7 +110,7 @@ const ContactSection: React.FC = () => {
                   </svg>
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--color-heading)', marginBottom: '8px' }}>Richiesta in preparazione!</h3>
                   <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', margin: 0 }}>
-                    Ti stiamo reindirizzando alla tua casella e-mail per inviare la richiesta a <strong>luciobaiocchi1@gmail.com</strong>.
+                    Ti stiamo reindirizzando alla tua casella e-mail per inviare la richiesta a <strong>thomaskellywork24@gmail.com</strong>.
                   </p>
                 </div>
               ) : (
