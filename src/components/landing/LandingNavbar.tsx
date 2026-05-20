@@ -106,10 +106,10 @@ const LandingNavbar: React.FC = () => {
                 id="use-cases-dropdown"
                 className="nav-link-custom"
               >
-                <NavDropdown.Item as={Link} to="/casi-duso/gestione-ordini" style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <NavDropdown.Item as={Link} to="/casi-duso/gestione-ordini">
                   {tr.nav.ordersManagement}
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/casi-duso/reparto-sales" style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <NavDropdown.Item as={Link} to="/casi-duso/reparto-sales">
                   {tr.nav.salesDepartment}
                 </NavDropdown.Item>
               </NavDropdown>

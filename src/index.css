@@ -214,7 +214,7 @@ section {
 .nav-link-custom {
   color: var(--text-body);
   font-family: var(--font-mono) !important;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 0.8125rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -228,7 +228,7 @@ section {
 
 .nav-link-custom .dropdown-toggle {
   font-family: var(--font-mono) !important;
-  font-weight: 700 !important;
+  font-weight: 400 !important;
   font-size: 0.8125rem !important;
   text-transform: uppercase !important;
   letter-spacing: 0.05em !important;
@@ -239,6 +239,14 @@ section {
 .nav-link-custom .dropdown-toggle:hover,
 .nav-link-custom.show .dropdown-toggle {
   color: var(--color-heading) !important;
+}
+
+.nav-link-custom .dropdown-item {
+  font-family: var(--font-mono) !important;
+  font-weight: 400 !important;
+  font-size: 0.8125rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
 }
 
 /* --- CARD --- */
