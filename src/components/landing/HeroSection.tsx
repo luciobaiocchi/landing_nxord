@@ -20,7 +20,7 @@ const HeroSection: React.FC = () => {
           letterSpacing: '0.1em',
           marginBottom: '20px'
         }}>
-          Sales Intelligence per Distributori Ho.Re.Ca.
+          Intelligence per Distributori Ho.Re.Ca.
         </p>
 
         {/* Titolo Principale Impattante (Stile Plato + Classic Serif) */}
@@ -55,6 +55,24 @@ const HeroSection: React.FC = () => {
           <a href="#benefits" onClick={() => analytics.trackHeroCTA('Secondary Learn More')} className="btn-ghost-primary" style={{ padding: '14px 32px', fontSize: '1rem' }}>
             Scopri di più
           </a>
+        </div>
+
+        {/* KPI Metrics Bar */}
+        <div className="reveal active d-flex flex-wrap justify-content-center gap-5 mt-3 mb-4" style={{ borderTop: '1px solid var(--border-light)', paddingTop: '32px' }}>
+          {[
+            { value: '+15%', label: 'Valore medio per ordine' },
+            { value: '5 ore', label: 'Risparmiate / addetto / settimana' },
+            { value: '8x', label: 'ROI atteso nel primo anno' }
+          ].map((kpi, i) => (
+            <div key={i} style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--color-heading)', letterSpacing: '-0.04em', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
+                {kpi.value}
+              </div>
+              <div style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', marginTop: '6px', fontWeight: 500 }}>
+                {kpi.label}
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Visual Mockup A Tutta Larghezza (ERP & Sales Panel) */}

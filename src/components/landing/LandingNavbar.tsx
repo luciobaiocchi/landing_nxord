@@ -48,7 +48,7 @@ const LandingNavbar: React.FC = () => {
         fontSize: '0.8125rem',
         fontWeight: 600,
         textAlign: 'center',
-        padding: '10px 16px',
+        padding: '20px 16px',
         fontFamily: 'var(--font-heading)',
         letterSpacing: '0.01em',
         borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
@@ -58,9 +58,10 @@ const LandingNavbar: React.FC = () => {
         gap: '8px',
         flexWrap: 'wrap'
       }}>
-        <span>Abbiamo raccolto il nostro Seed Round da $14.5M per trasformare le vendite B2B Ho.Re.Ca.</span>
-        <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} style={{ color: '#38bdf8', textDecoration: 'underline', fontWeight: 700 }}>
-          Scopri le posizioni aperte e unisciti a noi &rarr;
+        <span style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.625rem' }}>✦</span>
+        <span>NxOrd è ora disponibile per i distributori Ho.Re.Ca. italiani.</span>
+        <a href="#contact" style={{ color: 'var(--color-accent)', textDecoration: 'none', fontWeight: 700 }}>
+          Prenota la tua demo gratuita →
         </a>
       </div>
 
@@ -96,9 +97,7 @@ const LandingNavbar: React.FC = () => {
             <Nav className="mx-auto" style={{ gap: '1.5rem' }}>
               <Nav.Link href="#benefits" onClick={(e) => handleScroll(e, 'benefits')} className="nav-link-custom">Prodotto</Nav.Link>
               <Nav.Link href="#features" onClick={(e) => handleScroll(e, 'features')} className="nav-link-custom">Sales Management</Nav.Link>
-              <Nav.Link href="#proactive" onClick={(e) => handleScroll(e, 'features')} className="nav-link-custom">Field Sales</Nav.Link>
-              <Nav.Link href="#automation" onClick={(e) => handleScroll(e, 'features')} className="nav-link-custom">Inside Sales</Nav.Link>
-              <Nav.Link href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="nav-link-custom">Risorse</Nav.Link>
+              <Nav.Link href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="nav-link-custom">Contatti</Nav.Link>
             </Nav>
 
             <div className="d-flex align-items-center justify-content-center gap-3 mt-3 mt-lg-0">

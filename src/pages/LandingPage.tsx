@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import LandingNavbar from '../components/landing/LandingNavbar';
 import HeroSection from '../components/landing/HeroSection';
-// import TestimonialsSection from '../components/landing/TestimonialsSection';
+import SocialProofSection from '../components/landing/SocialProofSection';
+import TestimonialsSection from '../components/landing/TestimonialsSection';
 import FeaturesSection from '../components/landing/FeaturesSection';
 import BenefitsSection from '../components/landing/BenefitsSection';
 import AboutSection from '../components/landing/AboutSection';
@@ -11,16 +12,13 @@ import '../index.css';
 
 const LandingPage: React.FC = () => {
   useEffect(() => {
-    // Scroll Reveal Observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
         }
       });
-    }, {
-      threshold: 0.1
-    });
+    }, { threshold: 0.1 });
 
     const reveals = document.querySelectorAll('.reveal');
     reveals.forEach((reveal) => observer.observe(reveal));
@@ -34,9 +32,10 @@ const LandingPage: React.FC = () => {
     <div className="landing-page bg-main text-body">
       <LandingNavbar />
       <HeroSection />
-      {/*<TestimonialsSection />*/}
+      <SocialProofSection />
       <FeaturesSection />
       <BenefitsSection />
+      <TestimonialsSection />
       <AboutSection />
       <ContactSection />
       <Footer />

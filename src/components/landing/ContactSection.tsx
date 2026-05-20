@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { analytics } from '../../utils/analytics';
+import lucioImg from '../../assets/lucio.png';
 
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -38,9 +39,35 @@ const ContactSection: React.FC = () => {
             <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--color-heading)', letterSpacing: '-0.03em', marginBottom: '24px' }}>
               Let’s have a chat!
             </h2>
-            <p style={{ color: 'var(--text-body)', fontSize: '1.125rem', lineHeight: 1.6, marginBottom: '32px' }}>
+            <p style={{ color: 'var(--text-body)', fontSize: '1.125rem', lineHeight: 1.6, marginBottom: '28px' }}>
               Non vediamo l'ora di comprendere i tuoi obiettivi commerciali e le sfide di logistica/magazzino della tua azienda. Parliamo insieme del potenziale di crescita per il tuo team in un colloquio non vincolante.
             </p>
+
+            {/* Founder Card */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '16px',
+              padding: '18px 22px',
+              backgroundColor: 'var(--bg-main)',
+              border: '1px solid var(--border-color)',
+              borderRadius: '10px',
+              marginBottom: '28px'
+            }}>
+              <img
+                src={lucioImg}
+                alt="Lucio Baiocchi"
+                style={{ width: '52px', height: '52px', borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
+              />
+              <div>
+                <div style={{ fontWeight: 700, fontSize: '0.9375rem', color: 'var(--color-heading)' }}>
+                  Lucio Baiocchi
+                </div>
+                <div style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', marginTop: '2px' }}>
+                  Co-Founder, NxOrd · Rispondo personalmente a ogni richiesta.
+                </div>
+              </div>
+            </div>
 
             <ul style={{
               listStyle: 'none',
