@@ -21,12 +21,6 @@ const GestioneOrdiniPage: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  const kpis = [
-    { value: tr.kpi1Value, label: tr.kpi1Label },
-    { value: tr.kpi2Value, label: tr.kpi2Label },
-    { value: tr.kpi3Value, label: tr.kpi3Label },
-  ];
-
   return (
     <div className="landing-page bg-main text-body">
       <SEO
@@ -43,8 +37,8 @@ const GestioneOrdiniPage: React.FC = () => {
       {/* Hero */}
       <section style={{ padding: '96px 0 80px', backgroundColor: 'var(--bg-white)', borderBottom: '1px solid var(--border-light)' }}>
         <div className="container">
-          <div className="row align-items-center g-5">
-            <div className="col-12 col-lg-7 reveal active">
+          <div className="row">
+            <div className="col-12 reveal active">
               <div style={{ display: 'flex', gap: '10px', marginBottom: '16px', alignItems: 'center' }}>
                 <Link to="/" style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', textDecoration: 'none', fontFamily: 'var(--font-heading)', fontWeight: 600 }}>Home</Link>
                 <span style={{ color: 'var(--border-dark)', fontSize: '0.75rem' }}>›</span>
@@ -62,22 +56,6 @@ const GestioneOrdiniPage: React.FC = () => {
               <a href="#contact" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }} className="btn-primary-action" style={{ padding: '14px 32px', fontSize: '1rem' }}>
                 {tr.ctaBtn}
               </a>
-            </div>
-
-            {/* KPI column */}
-            <div className="col-12 col-lg-5 reveal active">
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                {kpis.map((kpi, i) => (
-                  <div key={i} style={{ padding: '24px 28px', backgroundColor: i === 0 ? 'var(--color-heading)' : 'var(--bg-white)', border: '1px solid ' + (i === 0 ? 'var(--color-heading)' : 'var(--border-color)'), borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '20px', boxShadow: 'var(--shadow-sm)' }}>
-                    <div style={{ fontSize: '2rem', fontWeight: 800, color: i === 0 ? '#ffffff' : 'var(--color-heading)', fontFamily: 'var(--font-heading)', letterSpacing: '-0.04em', minWidth: '80px' }}>
-                      {kpi.value}
-                    </div>
-                    <div style={{ fontSize: '0.875rem', color: i === 0 ? 'rgba(255,255,255,0.7)' : 'var(--text-muted)', fontWeight: 500, lineHeight: 1.4 }}>
-                      {kpi.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>
